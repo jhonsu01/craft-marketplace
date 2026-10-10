@@ -1,6 +1,6 @@
 {
   "name": "effectcraft-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create motion graphics, animated titles and visual effects (text, shapes, media, keyframes, expressions, 306 effects, templates) and render MP4, ProRes, WebM, GIF, image sequences and Lottie, using the EffectCraft compositor installed on Windows, macOS or Linux. Not affiliated with EffectCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",

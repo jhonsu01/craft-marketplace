@@ -36946,6 +36946,11 @@ function sequenceFolder(dir, stem, overwrite) {
   (0, import_fs4.mkdirSync)(candidate, { recursive: true });
   return candidate;
 }
+function nameStem(name) {
+  const exts = /* @__PURE__ */ new Set([...Object.values(OUTPUTS).map((o) => o.ext), "ecproj", "ecprojx", "tiff", "jpeg", "aiff"]);
+  const m = /\.([^.\\/]+)$/.exec(name);
+  return m && exts.has(m[1].toLowerCase()) ? name.slice(0, -m[0].length) : name;
+}
 async function renderAll(s, comp, base, formats, o) {
   const out = [];
   for (const [i, f] of formats.entries()) {
@@ -36956,7 +36961,7 @@ async function renderAll(s, comp, base, formats, o) {
       throw new Error(`output_path must end in .${spec.ext} for ${f}.`);
     }
     const dir = base.output_dir ?? path3.dirname(base.output_path ?? base.stemSource);
-    const stem = stemOf(base.output_path ?? base.stemSource) + (base.output_path ? "" : base.suffix);
+    const stem = base.output_path ? stemOf(base.output_path) : (base.name !== void 0 ? nameStem(base.name) : stemOf(base.stemSource)) + base.suffix;
     if ("sequence" in spec) {
       const folder = sequenceFolder(dir, stem, base.overwrite);
       const r = await renderQueue(s, comp, path3.join(folder, `${stem}.${spec.ext}`), spec.format, o);
@@ -37089,7 +37094,7 @@ async function inProject(s, a, fn) {
     const compName = (proj.items ?? []).find((i) => i.id === comp || i.name === comp)?.name ?? "effectcraft";
     const needsComp = a.formats.some((f) => f !== "ecproj");
     if (needsComp && comp === void 0) throw new Error("There is no composition to render: create one (comp.new) or give comp.");
-    outputs = await renderAll(s, comp, { stemSource: path4.join(dir, a.name ?? compName), suffix: "", output_dir: dir, output_path: a.output_path, overwrite: a.overwrite }, a.formats, a);
+    outputs = await renderAll(s, comp, { stemSource: path4.join(dir, a.name ?? compName), name: a.name ?? compName, suffix: "", output_dir: dir, output_path: a.output_path, overwrite: a.overwrite }, a.formats, a);
   }
   const img = a.preview_time !== void 0 ? await preview(s, a.comp, a.preview_time, 960).catch(() => void 0) : void 0;
   return withPreview({ ...body, success: !body.failed, ...imported.length ? { imported } : {}, ...outputs ? { outputs } : {} }, [img], !!body.failed);
@@ -37544,7 +37549,7 @@ function registerMotionTools(server) {
           const c = await s.cmd("comp.new", { name: args.name, width: args.width, height: args.height, frameRate: args.fps, duration: args.duration, background: args.background });
           const comp = { id: c.comp, width: args.width, height: args.height, duration: args.duration };
           const layers = await addLayers(s, comp, args.layers);
-          const outputs = await renderAll(s, comp.id, { stemSource: path5.join(dir, args.name), suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
+          const outputs = await renderAll(s, comp.id, { stemSource: path5.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
           const imgs = [];
           for (const t of previewTimes(args.duration, args.preview_times)) imgs.push(await preview(s, comp.id, t, 960));
           return withPreview({ success: true, comp: { name: args.name, size: [args.width, args.height], fps: args.fps, duration: args.duration }, layers, outputs }, imgs);
@@ -37687,7 +37692,7 @@ function registerMotionTools(server) {
           }
           if (args.layers.length) await addLayers(s, comp, args.layers);
           const stem = args.name ?? t.template ?? args.template;
-          const outputs = await renderAll(s, compId, { stemSource: path5.join(dir, stem), suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
+          const outputs = await renderAll(s, compId, { stemSource: path5.join(dir, stem), name: stem, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
           const imgs = [];
           for (const tm of previewTimes(comp.duration, args.preview_times)) imgs.push(await preview(s, compId, tm, 960));
           return withPreview({ success: true, template: t.template, controls: controls.map((c) => c.name), set: applied, outputs }, imgs);
