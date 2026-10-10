@@ -15,6 +15,7 @@
 | Plugin | What it does | Needs |
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | Page layout, data merge, InDesign IDML, print-ready PDF/X, PNG, EPUB and HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
+| **EffectCraft Bridge** (`effectcraft-mcp-server`) | Motion graphics, animated titles, effects on videos, templates; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 
 ## Install in Codex
 
@@ -30,6 +31,10 @@ codex plugin marketplace add jhonsu01/craft-marketplace
 
 ```bash
 codex plugin add designcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add effectcraft-mcp-server@craft
 ```
 
 The plugins start a local Node.js server, so Node.js ≥ 20 must be on `PATH`. If an app is not in its standard folder, set its variable (e.g. `DESIGNCRAFT_DIR`) as a system environment variable.

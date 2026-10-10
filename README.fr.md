@@ -15,6 +15,7 @@
 | Plugin | Ce qu'il fait | Prérequis |
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | Mise en page, fusion de données, IDML d'InDesign, PDF/X pour l'impression, PNG, EPUB et HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
+| **EffectCraft Bridge** (`effectcraft-mcp-server`) | Motion design, titres animés, effets sur vidéos, modèles ; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 
 ## Installer dans Codex
 
@@ -30,6 +31,10 @@ codex plugin marketplace add jhonsu01/craft-marketplace
 
 ```bash
 codex plugin add designcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add effectcraft-mcp-server@craft
 ```
 
 Les plugins lancent un serveur Node.js local : Node.js ≥ 20 doit donc être dans le `PATH`. Si une application n'est pas dans son dossier standard, définissez sa variable (par ex. `DESIGNCRAFT_DIR`) comme variable d'environnement système.

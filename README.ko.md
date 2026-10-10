@@ -15,6 +15,7 @@
 | 플러그인 | 기능 | 필요 |
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | 페이지 레이아웃, 데이터 병합, InDesign IDML, 인쇄용 PDF/X, PNG, EPUB, HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
+| **EffectCraft Bridge** (`effectcraft-mcp-server`) | 모션 그래픽, 애니메이션 타이틀, 영상 효과, 템플릿; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 
 ## Codex에 설치
 
@@ -30,6 +31,10 @@ codex plugin marketplace add jhonsu01/craft-marketplace
 
 ```bash
 codex plugin add designcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add effectcraft-mcp-server@craft
 ```
 
 플러그인은 로컬 Node.js 서버를 시작하므로 `PATH`에 Node.js ≥ 20이 있어야 합니다. 앱이 표준 폴더에 없다면 해당 변수(예: `DESIGNCRAFT_DIR`)를 시스템 환경 변수로 설정하세요.

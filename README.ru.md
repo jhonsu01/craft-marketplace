@@ -15,6 +15,7 @@
 | Плагин | Что делает | Требуется |
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | Вёрстка, слияние данных, IDML из InDesign, PDF/X для печати, PNG, EPUB и HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
+| **EffectCraft Bridge** (`effectcraft-mcp-server`) | Моушн-графика, анимированные титры, эффекты для видео, шаблоны; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 
 ## Установка в Codex
 
@@ -30,6 +31,10 @@ codex plugin marketplace add jhonsu01/craft-marketplace
 
 ```bash
 codex plugin add designcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add effectcraft-mcp-server@craft
 ```
 
 Плагины запускают локальный сервер Node.js, поэтому Node.js ≥ 20 должен быть в `PATH`. Если приложение установлено не в стандартную папку, задайте его переменную (например, `DESIGNCRAFT_DIR`) как системную переменную окружения.
