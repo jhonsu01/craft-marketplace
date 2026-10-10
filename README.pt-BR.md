@@ -1,0 +1,55 @@
+<p align="center"><img src="plugins/designcraft-mcp-server/assets/icon.png" width="96" alt="Craft Bridges"></p>
+
+<h1 align="center">Craft Bridges</h1>
+
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.es.md">Español</a> · <b>Português</b> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a>
+</p>
+
+<p align="center">Marketplace de plugins do Codex para os conectores MCP Craft: pontes para os apps Craft de código aberto instalados no seu computador (Windows, macOS, Linux).</p>
+
+---
+
+## Plugins
+
+| Plugin | O que faz | Requer |
+| --- | --- | --- |
+| **DesignCraft Bridge** (`designcraft-mcp-server`) | Diagramação, mala direta, IDML do InDesign, PDF/X para gráfica, PNG, EPUB e HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
+
+## Instalar no Codex
+
+1. *Plugins → Adicionar → Adicionar marketplace*.
+2. **Origem:** `jhonsu01/craft-marketplace` · **Referência Git:** `main` · deixe *caminhos esparsos* vazio.
+3. Clique em **Adicionar marketplace**, abra o marketplace **Craft Bridges** e instale o **DesignCraft Bridge**.
+
+Pela linha de comando:
+
+```bash
+codex plugin marketplace add jhonsu01/craft-marketplace
+```
+
+```bash
+codex plugin add designcraft-mcp-server@craft
+```
+
+Os plugins iniciam um servidor local Node.js, então o Node.js ≥ 20 precisa estar no `PATH`. Se um app não estiver na pasta padrão, defina a variável dele (ex.: `DESIGNCRAFT_DIR`) como variável de ambiente do sistema.
+
+## Atualizações
+
+Cada nova versão de um conector é publicada aqui. No Codex, atualize o marketplace (ou execute `codex plugin marketplace upgrade craft`) e o plugin é atualizado.
+
+```bash
+codex plugin marketplace upgrade craft
+```
+
+## Por que um marketplace
+
+O Codex também aceita um plugin enviado como zip, mas ele fica salvo na sua conta e um zip mais novo com o mesmo nome é recusado. Um marketplace é um repositório Git: o Codex o lê, instala os plugins que você escolher e obtém as novas versões com **Atualizar**.
+
+## Outros programas
+
+Claude Desktop e outros programas `.mcpb`: instale o `.mcpb` das versões de cada conector, ex.: [designcraft-mcp-server](https://github.com/jhonsu01/designcraft-mcp-server/releases/latest).
+
+## Licença
+
+Apache-2.0. Os apps Craft pertencem aos seus autores (Storytold); estes plugins não são afiliados nem endossados por eles.
