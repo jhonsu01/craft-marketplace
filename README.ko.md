@@ -17,6 +17,10 @@
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | 페이지 레이아웃, 데이터 병합, InDesign IDML, 인쇄용 PDF/X, PNG, EPUB, HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | 모션 그래픽, 애니메이션 타이틀, 영상 효과, 템플릿; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 | **LightCraft Bridge** (`lightcraft-mcp-server`) | RAW 현상: 자동 톤, 114개 슬라이더, 프리셋, 마스크, HDR과 파노라마; JPEG, TIFF, WebP, AVIF, DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
+| **PhotoCraft Bridge** (`photocraft-mcp-server`) | 사진 편집: 크기, 자르기, 보정, 122개 필터, 배경 제거, 텍스트와 디자인; PSD, PNG, JPEG, WebP | [PhotoCraft](https://github.com/storytold/photocraft) + Node.js ≥ 20 |
+| **VectorCraft Bridge** (`vectorcraft-mcp-server`) | 벡터 아트: 이미지 추적, 도형·텍스트·차트로 디자인, 색 변경; SVG, PDF, AI, EPS, DXF, PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
+| **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF: 병합, 분할, 페이지, OCR, 양식, 서명, 가리기, 암호; Word, HTML, 이미지, PDF/A로 변환 | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
+| **FilmCraft Bridge** (`filmcraft-mcp-server`) | 영상 편집: 분할, 트림, 효과, 색 보정, 타이틀, 속도, 전환 효과로 이어 붙이기; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 
 ## Codex에 설치
 
@@ -40,6 +44,22 @@ codex plugin add effectcraft-mcp-server@craft
 
 ```bash
 codex plugin add lightcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add photocraft-mcp-server@craft
+```
+
+```bash
+codex plugin add vectorcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add pdfcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add filmcraft-mcp-server@craft
 ```
 
 플러그인은 로컬 Node.js 서버를 시작하므로 `PATH`에 Node.js ≥ 20이 있어야 합니다. 앱이 표준 폴더에 없다면 해당 변수(예: `DESIGNCRAFT_DIR`)를 시스템 환경 변수로 설정하세요.

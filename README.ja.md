@@ -17,6 +17,10 @@
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | ページレイアウト、データ結合、InDesign の IDML、入稿用 PDF/X、PNG、EPUB、HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | モーショングラフィックス、アニメーションタイトル、動画エフェクト、テンプレート。MP4、ProRes、WebM、GIF、Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 | **LightCraft Bridge** (`lightcraft-mcp-server`) | RAW 現像：自動トーン、114 のスライダー、プリセット、マスク、HDR とパノラマ。JPEG、TIFF、WebP、AVIF、DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
+| **PhotoCraft Bridge** (`photocraft-mcp-server`) | 写真編集：サイズ変更、切り抜き、補正、122 種のフィルター、背景除去、テキストとデザイン。PSD、PNG、JPEG、WebP | [PhotoCraft](https://github.com/storytold/photocraft) + Node.js ≥ 20 |
+| **VectorCraft Bridge** (`vectorcraft-mcp-server`) | ベクターアート：画像トレース、図形・テキスト・グラフでのデザイン、再配色。SVG、PDF、AI、EPS、DXF、PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
+| **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF：結合、分割、ページ操作、OCR、フォーム、署名、墨消し、パスワード。Word、HTML、画像、PDF/A へ変換 | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
+| **FilmCraft Bridge** (`filmcraft-mcp-server`) | 動画編集：分割、トリム、エフェクト、カラールック、タイトル、速度、トランジション付き結合。H.264、ProRes、GIF、OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 
 ## Codex へのインストール
 
@@ -40,6 +44,22 @@ codex plugin add effectcraft-mcp-server@craft
 
 ```bash
 codex plugin add lightcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add photocraft-mcp-server@craft
+```
+
+```bash
+codex plugin add vectorcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add pdfcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add filmcraft-mcp-server@craft
 ```
 
 プラグインはローカルの Node.js サーバーを起動するため、`PATH` に Node.js ≥ 20 が必要です。アプリが標準のフォルダーにない場合は、その変数（例：`DESIGNCRAFT_DIR`）をシステムの環境変数として設定してください。

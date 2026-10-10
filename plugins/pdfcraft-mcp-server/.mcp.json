@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "pdfcraft": {
+      "command": "node",
+      "args": [
+        "./dist/bundle.cjs"
+      ],
+      "cwd": ".",
+      "env_vars": [
+        "PATH",
+        "Path",
+        "HOME",
+        "USERPROFILE",
+        "LOCALAPPDATA",
+        "APPDATA",
+        "ProgramFiles",
+        "ProgramFiles(x86)",
+        "TEMP",
+        "TMP",
+        "TMPDIR",
+        "SystemRoot",
+        "XDG_CONFIG_HOME",
+        "XDG_DATA_HOME",
+        "DISPLAY",
+        "WAYLAND_DISPLAY",
+        "PDFCRAFT_DIR",
+        "PDFCRAFT_CLI",
+        "PDFCRAFT_ROOT",
+        "PDFCRAFT_APP",
+        "PDFCRAFT_MCP_TIMEOUT"
+      ],
+      "startup_timeout_sec": 60,
+      "tool_timeout_sec": 3600
+    }
+  }
+}

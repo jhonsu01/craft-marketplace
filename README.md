@@ -17,6 +17,10 @@
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | Page layout, data merge, InDesign IDML, print-ready PDF/X, PNG, EPUB and HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | Motion graphics, animated titles, effects on videos, templates; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 | **LightCraft Bridge** (`lightcraft-mcp-server`) | Raw development: auto tone, 114 sliders, presets, masks, HDR and panoramas; JPEG, TIFF, WebP, AVIF, DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
+| **PhotoCraft Bridge** (`photocraft-mcp-server`) | Photo editing: resize, crop, adjustments, 122 filters, background removal, text and designs; PSD, PNG, JPEG, WebP | [PhotoCraft](https://github.com/storytold/photocraft) + Node.js ≥ 20 |
+| **VectorCraft Bridge** (`vectorcraft-mcp-server`) | Vector art: image trace, designs from shapes, text and charts, recolor; SVG, PDF, AI, EPS, DXF, PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
+| **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF work: merge, split, pages, OCR, forms, signatures, redaction, passwords; to Word, HTML, images, PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
+| **FilmCraft Bridge** (`filmcraft-mcp-server`) | Video editing: split, trim, effects, color looks, titles, speed, join with transitions; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 
 ## Install in Codex
 
@@ -40,6 +44,22 @@ codex plugin add effectcraft-mcp-server@craft
 
 ```bash
 codex plugin add lightcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add photocraft-mcp-server@craft
+```
+
+```bash
+codex plugin add vectorcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add pdfcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add filmcraft-mcp-server@craft
 ```
 
 The plugins start a local Node.js server, so Node.js ≥ 20 must be on `PATH`. If an app is not in its standard folder, set its variable (e.g. `DESIGNCRAFT_DIR`) as a system environment variable.

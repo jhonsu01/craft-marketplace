@@ -17,6 +17,10 @@
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | 排版、数据合并、InDesign IDML、印刷用 PDF/X、PNG、EPUB 和 HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | 动态图形、动画标题、视频特效、模板；MP4、ProRes、WebM、GIF、Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 | **LightCraft Bridge** (`lightcraft-mcp-server`) | RAW 冲洗：自动色调、114 个滑块、预设、蒙版、HDR 与全景；JPEG、TIFF、WebP、AVIF、DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
+| **PhotoCraft Bridge** (`photocraft-mcp-server`) | 照片编辑：尺寸、裁剪、调整、122 种滤镜、去除背景、文字与设计；PSD、PNG、JPEG、WebP | [PhotoCraft](https://github.com/storytold/photocraft) + Node.js ≥ 20 |
+| **VectorCraft Bridge** (`vectorcraft-mcp-server`) | 矢量图形：图像描摹、用形状、文字和图表设计、重新着色；SVG、PDF、AI、EPS、DXF、PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
+| **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF：合并、拆分、页面、OCR、表单、签名、涂黑、密码；转 Word、HTML、图片、PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
+| **FilmCraft Bridge** (`filmcraft-mcp-server`) | 视频剪辑：分割、修剪、特效、调色、标题、变速、带转场拼接；H.264、ProRes、GIF、OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 
 ## 在 Codex 中安装
 
@@ -40,6 +44,22 @@ codex plugin add effectcraft-mcp-server@craft
 
 ```bash
 codex plugin add lightcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add photocraft-mcp-server@craft
+```
+
+```bash
+codex plugin add vectorcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add pdfcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add filmcraft-mcp-server@craft
 ```
 
 插件会启动本地 Node.js 服务器，因此 `PATH` 中必须有 Node.js ≥ 20。如果某个应用不在标准文件夹中，请把它的变量（例如 `DESIGNCRAFT_DIR`）设为系统环境变量。

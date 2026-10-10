@@ -17,6 +17,10 @@
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | Diagramação, mala direta, IDML do InDesign, PDF/X para gráfica, PNG, EPUB e HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | Motion graphics, títulos animados, efeitos em vídeos, modelos; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
 | **LightCraft Bridge** (`lightcraft-mcp-server`) | Revelação raw: tom automático, 114 controles, predefinições, máscaras, HDR e panoramas; JPEG, TIFF, WebP, AVIF, DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
+| **PhotoCraft Bridge** (`photocraft-mcp-server`) | Edição de fotos: tamanho, recorte, ajustes, 122 filtros, remoção de fundo, texto e designs; PSD, PNG, JPEG, WebP | [PhotoCraft](https://github.com/storytold/photocraft) + Node.js ≥ 20 |
+| **VectorCraft Bridge** (`vectorcraft-mcp-server`) | Arte vetorial: vetorizar imagens, designs com formas, texto e gráficos, recolorir; SVG, PDF, AI, EPS, DXF, PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
+| **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF: juntar, dividir, páginas, OCR, formulários, assinaturas, tarjas, senhas; para Word, HTML, imagens, PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
+| **FilmCraft Bridge** (`filmcraft-mcp-server`) | Edição de vídeo: dividir, cortar, efeitos, looks de cor, títulos, velocidade, juntar com transições; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 
 ## Instalar no Codex
 
@@ -40,6 +44,22 @@ codex plugin add effectcraft-mcp-server@craft
 
 ```bash
 codex plugin add lightcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add photocraft-mcp-server@craft
+```
+
+```bash
+codex plugin add vectorcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add pdfcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add filmcraft-mcp-server@craft
 ```
 
 Os plugins iniciam um servidor local Node.js, então o Node.js ≥ 20 precisa estar no `PATH`. Se um app não estiver na pasta padrão, defina a variável dele (ex.: `DESIGNCRAFT_DIR`) como variável de ambiente do sistema.
