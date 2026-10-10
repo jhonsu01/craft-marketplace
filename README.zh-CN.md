@@ -16,6 +16,7 @@
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | 排版、数据合并、InDesign IDML、印刷用 PDF/X、PNG、EPUB 和 HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | 动态图形、动画标题、视频特效、模板；MP4、ProRes、WebM、GIF、Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
+| **LightCraft Bridge** (`lightcraft-mcp-server`) | RAW 冲洗：自动色调、114 个滑块、预设、蒙版、HDR 与全景；JPEG、TIFF、WebP、AVIF、DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
 
 ## 在 Codex 中安装
 
@@ -35,6 +36,10 @@ codex plugin add designcraft-mcp-server@craft
 
 ```bash
 codex plugin add effectcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add lightcraft-mcp-server@craft
 ```
 
 插件会启动本地 Node.js 服务器，因此 `PATH` 中必须有 Node.js ≥ 20。如果某个应用不在标准文件夹中，请把它的变量（例如 `DESIGNCRAFT_DIR`）设为系统环境变量。

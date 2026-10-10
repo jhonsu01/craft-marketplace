@@ -16,6 +16,7 @@
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | Seitenlayout, Datenzusammenführung, InDesign-IDML, druckfertiges PDF/X, PNG, EPUB und HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | Motion Graphics, animierte Titel, Effekte auf Videos, Vorlagen; MP4, ProRes, WebM, GIF, Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
+| **LightCraft Bridge** (`lightcraft-mcp-server`) | Raw-Entwicklung: Auto-Tonwert, 114 Regler, Vorgaben, Masken, HDR und Panoramen; JPEG, TIFF, WebP, AVIF, DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
 
 ## In Codex installieren
 
@@ -35,6 +36,10 @@ codex plugin add designcraft-mcp-server@craft
 
 ```bash
 codex plugin add effectcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add lightcraft-mcp-server@craft
 ```
 
 Die Plugins starten einen lokalen Node.js-Server, daher muss Node.js ≥ 20 im `PATH` liegen. Liegt eine App nicht in ihrem Standardordner, setzen Sie ihre Variable (z. B. `DESIGNCRAFT_DIR`) als Systemumgebungsvariable.

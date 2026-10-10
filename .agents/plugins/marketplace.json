@@ -27,6 +27,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Design"
+    },
+    {
+      "name": "lightcraft-mcp-server",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lightcraft-mcp-server"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
     }
   ]
 }

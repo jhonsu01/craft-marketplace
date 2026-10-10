@@ -16,6 +16,7 @@
 | --- | --- | --- |
 | **DesignCraft Bridge** (`designcraft-mcp-server`) | ページレイアウト、データ結合、InDesign の IDML、入稿用 PDF/X、PNG、EPUB、HTML | [DesignCraft](https://github.com/storytold/designcraft) + Node.js ≥ 20 |
 | **EffectCraft Bridge** (`effectcraft-mcp-server`) | モーショングラフィックス、アニメーションタイトル、動画エフェクト、テンプレート。MP4、ProRes、WebM、GIF、Lottie | [EffectCraft](https://github.com/storytold/effectcraft) + Node.js ≥ 20 |
+| **LightCraft Bridge** (`lightcraft-mcp-server`) | RAW 現像：自動トーン、114 のスライダー、プリセット、マスク、HDR とパノラマ。JPEG、TIFF、WebP、AVIF、DNG | [LightCraft](https://github.com/storytold/lightcraft) + Node.js ≥ 20 |
 
 ## Codex へのインストール
 
@@ -35,6 +36,10 @@ codex plugin add designcraft-mcp-server@craft
 
 ```bash
 codex plugin add effectcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add lightcraft-mcp-server@craft
 ```
 
 プラグインはローカルの Node.js サーバーを起動するため、`PATH` に Node.js ≥ 20 が必要です。アプリが標準のフォルダーにない場合は、その変数（例：`DESIGNCRAFT_DIR`）をシステムの環境変数として設定してください。
