@@ -64,6 +64,20 @@ codex plugin add filmcraft-mcp-server@craft
 
 플러그인은 로컬 Node.js 서버를 시작하므로 `PATH`에 Node.js ≥ 20이 있어야 합니다. 앱이 표준 폴더에 없다면 해당 변수(예: `DESIGNCRAFT_DIR`)를 시스템 환경 변수로 설정하세요.
 
+## DeepSeek Harness
+
+각 플러그인 폴더는 DeepSeek Harness 번들이기도 합니다. *Plugins → Add plugin*에서 플러그인 주소를 입력하고 **Install**과 **Enable now**를 누르세요:
+
+- `github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server`
+
+Harness는 아직 플러그인을 자동 업데이트하지 않습니다. 업데이트하려면 제거 후 다시 설치하세요.
+
 ## 업데이트
 
 각 커넥터의 새 버전은 여기에 게시됩니다. Codex에서 마켓플레이스를 새로 고치면(또는 `codex plugin marketplace upgrade craft` 실행) 플러그인이 업데이트됩니다.

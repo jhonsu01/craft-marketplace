@@ -1,6 +1,6 @@
 {
   "name": "pdfcraft-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with the PdfCraft editor installed on Windows, macOS or Linux. Not affiliated with PdfCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",

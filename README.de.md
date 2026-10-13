@@ -64,6 +64,20 @@ codex plugin add filmcraft-mcp-server@craft
 
 Die Plugins starten einen lokalen Node.js-Server, daher muss Node.js ≥ 20 im `PATH` liegen. Liegt eine App nicht in ihrem Standardordner, setzen Sie ihre Variable (z. B. `DESIGNCRAFT_DIR`) als Systemumgebungsvariable.
 
+## DeepSeek Harness
+
+Jeder Plugin-Ordner ist auch ein DeepSeek-Harness-Bundle. In *Plugins → Add plugin* die Adresse eines Plugins eingeben, **Install** und **Enable now** klicken:
+
+- `github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server`
+
+Harness aktualisiert Plugins noch nicht selbst: Zum Aktualisieren deinstallieren und neu installieren.
+
 ## Updates
 
 Jede neue Version eines Konnektors wird hier veröffentlicht. Aktualisieren Sie in Codex den Marketplace (oder führen Sie `codex plugin marketplace upgrade craft` aus), dann wird das Plugin aktualisiert.

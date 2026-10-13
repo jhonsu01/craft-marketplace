@@ -1,6 +1,6 @@
 {
   "name": "lightcraft-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Develop photos and raw files (auto tone, white balance, 114 sliders, presets, profiles, masks, spot healing, crop), merge HDR and panoramas, cull by sharpness and export JPEG, TIFF, WebP, AVIF or DNG, using the LightCraft raw developer installed on Windows, macOS or Linux. Not affiliated with LightCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",

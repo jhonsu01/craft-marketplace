@@ -64,6 +64,20 @@ codex plugin add filmcraft-mcp-server@craft
 
 插件会启动本地 Node.js 服务器，因此 `PATH` 中必须有 Node.js ≥ 20。如果某个应用不在标准文件夹中，请把它的变量（例如 `DESIGNCRAFT_DIR`）设为系统环境变量。
 
+## DeepSeek Harness
+
+每个插件文件夹同时也是 DeepSeek Harness 的 bundle。在 *Plugins → Add plugin* 中输入某个插件的地址，点击 **Install** 和 **Enable now**：
+
+- `github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server`
+- `github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server`
+
+Harness 目前不会自动更新插件：要更新，请卸载后重新安装。
+
 ## 更新
 
 每个连接器的新版本都会发布到这里。在 Codex 中刷新插件市场（或运行 `codex plugin marketplace upgrade craft`），插件就会更新。

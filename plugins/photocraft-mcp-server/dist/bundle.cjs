@@ -36948,7 +36948,7 @@ function withFileLinks(obj) {
   const files = outputFiles(obj);
   return files.length ? { ...obj, files_markdown: filesMarkdown(files) } : obj;
 }
-var LINK_INSTRUCTIONS = "When a result lists output files it includes files_markdown: ready-made links (file:/// URLs) to every file and folder written. Show them to the user exactly as given (one per line, or inside a table cell) so each output can be opened from the chat; never retype the paths.";
+var LINK_INSTRUCTIONS = "When a result lists output files it includes files_markdown: ready-made links (file:/// URLs) to every file and folder written. Show them to the user exactly as given (one per line, or inside a table cell) so each output can be opened from the chat; never retype the paths. If your app also has a tool that delivers or presents files to the user (for example `present` in DeepSeek Harness), call it with the output files too, so they appear as cards that open in the app.";
 
 // src/tools/common.ts
 function json2(obj, isError = false) {

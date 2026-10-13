@@ -1,6 +1,6 @@
 {
   "name": "photocraft-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Edit photos (resize, crop, adjustments, Camera Raw, filters, remove background, text, shapes, layer styles), create designs and convert between PSD, TIFF, PNG, JPEG, WebP, EXR and more, using the PhotoCraft editor installed on Windows, macOS or Linux. Not affiliated with PhotoCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",
