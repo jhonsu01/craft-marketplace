@@ -1,6 +1,6 @@
 {
   "name": "filmcraft-mcp-server",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Split, trim, edit (effects, color looks, titles, speed, audio), join, convert and export video with the FilmCraft editor installed on Windows, macOS or Linux, and keep every edit editable. Not affiliated with FilmCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",

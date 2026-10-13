@@ -2986,7 +2986,7 @@ var require_compile = __commonJS({
       const schOrFunc = root.refs[ref];
       if (schOrFunc)
         return schOrFunc;
-      let _sch = resolve2.call(this, root, ref);
+      let _sch = resolve3.call(this, root, ref);
       if (_sch === void 0) {
         const schema = (_a3 = root.localRefs) === null || _a3 === void 0 ? void 0 : _a3[ref];
         const { schemaId } = this.opts;
@@ -3013,7 +3013,7 @@ var require_compile = __commonJS({
     function sameSchemaEnv(s1, s2) {
       return s1.schema === s2.schema && s1.root === s2.root && s1.baseId === s2.baseId;
     }
-    function resolve2(root, ref) {
+    function resolve3(root, ref) {
       let sch;
       while (typeof (sch = this.refs[ref]) == "string")
         ref = sch;
@@ -3264,8 +3264,8 @@ var require_utils = __commonJS({
       }
       return ind;
     }
-    function removeDotSegments(path7) {
-      let input2 = path7;
+    function removeDotSegments(path8) {
+      let input2 = path8;
       const output2 = [];
       let nextSlash = -1;
       let len = 0;
@@ -3674,8 +3674,8 @@ var require_schemes = __commonJS({
       }
       if (wsComponent.resourceName) {
         const queryIndex = wsComponent.resourceName.indexOf("?");
-        const path7 = queryIndex === -1 ? wsComponent.resourceName : wsComponent.resourceName.slice(0, queryIndex);
-        wsComponent.path = path7 && path7 !== "/" ? path7 : void 0;
+        const path8 = queryIndex === -1 ? wsComponent.resourceName : wsComponent.resourceName.slice(0, queryIndex);
+        wsComponent.path = path8 && path8 !== "/" ? path8 : void 0;
         wsComponent.query = queryIndex === -1 ? void 0 : wsComponent.resourceName.slice(queryIndex + 1);
         wsComponent.resourceName = void 0;
       }
@@ -3843,7 +3843,7 @@ var require_fast_uri = __commonJS({
       }
       return uri;
     }
-    function resolve2(baseURI, relativeURI, options) {
+    function resolve3(baseURI, relativeURI, options) {
       const schemelessOptions = options ? Object.assign({ scheme: "null" }, options) : { scheme: "null" };
       const {
         parsed: baseParsed,
@@ -4212,7 +4212,7 @@ var require_fast_uri = __commonJS({
     var fastUri = {
       SCHEMES,
       normalize,
-      resolve: resolve2,
+      resolve: resolve3,
       resolveComponent,
       equal,
       serialize,
@@ -8020,10 +8020,10 @@ function mergeDefs(...defs) {
 function cloneDef(schema) {
   return mergeDefs(schema._zod.def);
 }
-function getElementAtPath(obj, path7) {
-  if (!path7)
+function getElementAtPath(obj, path8) {
+  if (!path8)
     return obj;
-  return path7.reduce((acc, key) => acc?.[key], obj);
+  return path8.reduce((acc, key) => acc?.[key], obj);
 }
 function promiseAllObject(promisesObj) {
   const keys = Object.keys(promisesObj);
@@ -8363,11 +8363,11 @@ function explicitlyAborted(x, startIndex = 0) {
   }
   return false;
 }
-function prefixIssues(path7, issues) {
+function prefixIssues(path8, issues) {
   return issues.map((iss) => {
     var _a3;
     (_a3 = iss).path ?? (_a3.path = []);
-    iss.path.unshift(path7);
+    iss.path.unshift(path8);
     return iss;
   });
 }
@@ -8817,16 +8817,16 @@ function flattenError(error62, mapper = (issue2) => issue2.message) {
 }
 function formatError(error62, mapper = (issue2) => issue2.message) {
   const fieldErrors = { _errors: [] };
-  const processError = (error63, path7 = []) => {
+  const processError = (error63, path8 = []) => {
     for (const issue2 of error63.issues) {
       if (issue2.code === "invalid_union" && issue2.errors.length) {
-        issue2.errors.map((issues) => processError({ issues }, [...path7, ...issue2.path]));
+        issue2.errors.map((issues) => processError({ issues }, [...path8, ...issue2.path]));
       } else if (issue2.code === "invalid_key") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else if (issue2.code === "invalid_element") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else {
-        const fullpath = [...path7, ...issue2.path];
+        const fullpath = [...path8, ...issue2.path];
         if (fullpath.length === 0) {
           fieldErrors._errors.push(mapper(issue2));
         } else {
@@ -8865,17 +8865,17 @@ function formatError(error62, mapper = (issue2) => issue2.message) {
 }
 function treeifyError(error62, mapper = (issue2) => issue2.message) {
   const result = { errors: [] };
-  const processError = (error63, path7 = []) => {
+  const processError = (error63, path8 = []) => {
     var _a3;
     for (const issue2 of error63.issues) {
       if (issue2.code === "invalid_union" && issue2.errors.length) {
-        issue2.errors.map((issues) => processError({ issues }, [...path7, ...issue2.path]));
+        issue2.errors.map((issues) => processError({ issues }, [...path8, ...issue2.path]));
       } else if (issue2.code === "invalid_key") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else if (issue2.code === "invalid_element") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else {
-        const fullpath = [...path7, ...issue2.path];
+        const fullpath = [...path8, ...issue2.path];
         if (fullpath.length === 0) {
           result.errors.push(mapper(issue2));
           continue;
@@ -8914,8 +8914,8 @@ function treeifyError(error62, mapper = (issue2) => issue2.message) {
 }
 function toDotPath(_path) {
   const segs = [];
-  const path7 = _path.map((seg) => typeof seg === "object" ? seg.key : seg);
-  for (const seg of path7) {
+  const path8 = _path.map((seg) => typeof seg === "object" ? seg.key : seg);
+  for (const seg of path8) {
     if (typeof seg === "number")
       segs.push(`[${seg}]`);
     else if (typeof seg === "symbol")
@@ -12230,7 +12230,7 @@ var recursive = /* @__PURE__ */ new WeakMap();
 var NONE = 0;
 var ASSUMED = 1;
 var PROVEN = 2;
-function isRecursive(inst, stack, resolve2) {
+function isRecursive(inst, stack, resolve3) {
   const cached2 = recursive.get(inst);
   if (cached2 !== void 0)
     return cached2 ? PROVEN : NONE;
@@ -12240,7 +12240,7 @@ function isRecursive(inst, stack, resolve2) {
   let result = NONE;
   const check2 = (child) => {
     if (result !== PROVEN && child?._zod) {
-      const answer = isRecursive(child, stack, resolve2);
+      const answer = isRecursive(child, stack, resolve3);
       if (answer > result)
         result = answer;
     }
@@ -12251,7 +12251,7 @@ function isRecursive(inst, stack, resolve2) {
       const desc = Object.getOwnPropertyDescriptor(sh, key);
       if (spread && !desc.enumerable)
         continue;
-      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve2) : NONE;
+      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve3) : NONE;
       if (child > answer)
         answer = child;
     }
@@ -12315,7 +12315,7 @@ function isRecursive(inst, stack, resolve2) {
       break;
     // `$ZodLazy` caches its inner on the def, so a resolved edge is followed exactly
     case "lazy": {
-      const inner = def._cachedInner ?? (resolve2 ? inst._zod.innerType : void 0);
+      const inner = def._cachedInner ?? (resolve3 ? inst._zod.innerType : void 0);
       merge2(inner ? isRecursive(inner, stack, false) : ASSUMED);
       break;
     }
@@ -26017,13 +26017,13 @@ function resolveRef(ref, ctx) {
   if (!ref.startsWith("#")) {
     throw new Error("External $ref is not supported, only local refs (#/...) are allowed");
   }
-  const path7 = ref.slice(1).split("/").filter(Boolean);
-  if (path7.length === 0) {
+  const path8 = ref.slice(1).split("/").filter(Boolean);
+  if (path8.length === 0) {
     return ctx.rootSchema;
   }
   const defsKey = ctx.version === "draft-2020-12" ? "$defs" : "definitions";
-  if (path7[0] === defsKey) {
-    const key = path7[1] === void 0 ? void 0 : decodeJSONPointerSegment(path7[1]);
+  if (path8[0] === defsKey) {
+    const key = path8[1] === void 0 ? void 0 : decodeJSONPointerSegment(path8[1]);
     if (!key || !ctx.defs[key]) {
       throw new Error(`Reference not found: ${ref}`);
     }
@@ -28496,21 +28496,21 @@ var StdioServerTransport = class {
     this.onclose?.();
   }
   send(message) {
-    return new Promise((resolve2) => {
+    return new Promise((resolve3) => {
       const json3 = serializeMessage(message);
       if (this._stdout.write(json3)) {
-        resolve2();
+        resolve3();
       } else {
-        this._stdout.once("drain", resolve2);
+        this._stdout.once("drain", resolve3);
       }
     });
   }
 };
 
 // src/server.ts
-var import_fs7 = require("fs");
-var path6 = __toESM(require("path"), 1);
-var import_url = require("url");
+var import_fs8 = require("fs");
+var path7 = __toESM(require("path"), 1);
+var import_url2 = require("url");
 
 // node_modules/zod/v3/helpers/util.js
 var util;
@@ -28886,8 +28886,8 @@ function getErrorMap2() {
 
 // node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
-  const { data, path: path7, errorMaps, issueData } = params;
-  const fullPath = [...path7, ...issueData.path || []];
+  const { data, path: path8, errorMaps, issueData } = params;
+  const fullPath = [...path8, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -29002,11 +29002,11 @@ var errorUtil;
 
 // node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
-  constructor(parent, value, path7, key) {
+  constructor(parent, value, path8, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path7;
+    this._path = path8;
     this._key = key;
   }
   get path() {
@@ -32557,11 +32557,11 @@ function normalizeObjectSchema(schema) {
   }
   return void 0;
 }
-function getDotPath(path7) {
-  if (path7.length === 0) {
+function getDotPath(path8) {
+  if (path8.length === 0) {
     return "object root";
   }
-  return path7.reduce((acc, seg, index) => {
+  return path8.reduce((acc, seg, index) => {
     if (index === 0) {
       return String(seg);
     }
@@ -34486,7 +34486,7 @@ var Protocol = class {
           return;
         }
         const pollInterval = task2.pollInterval ?? this._options?.defaultTaskPollInterval ?? 1e3;
-        await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
+        await new Promise((resolve3) => setTimeout(resolve3, pollInterval));
         options?.signal?.throwIfAborted();
       }
     } catch (error62) {
@@ -34503,7 +34503,7 @@ var Protocol = class {
    */
   request(request, resultSchema, options) {
     const { relatedRequestId, resumptionToken, onresumptiontoken, task, relatedTask } = options ?? {};
-    return new Promise((resolve2, reject) => {
+    return new Promise((resolve3, reject) => {
       const earlyReject = (error62) => {
         reject(error62);
       };
@@ -34581,7 +34581,7 @@ var Protocol = class {
           if (!parseResult.success) {
             reject(parseResult.error);
           } else {
-            resolve2(parseResult.data);
+            resolve3(parseResult.data);
           }
         } catch (error62) {
           reject(error62);
@@ -34843,12 +34843,12 @@ var Protocol = class {
       }
     } catch {
     }
-    return new Promise((resolve2, reject) => {
+    return new Promise((resolve3, reject) => {
       if (signal.aborted) {
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
         return;
       }
-      const timeoutId = setTimeout(resolve2, interval);
+      const timeoutId = setTimeout(resolve3, interval);
       signal.addEventListener("abort", () => {
         clearTimeout(timeoutId);
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
@@ -35979,7 +35979,7 @@ var McpServer = class {
     let task = createTaskResult.task;
     const pollInterval = task.pollInterval ?? 5e3;
     while (task.status !== "completed" && task.status !== "failed" && task.status !== "cancelled") {
-      await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
+      await new Promise((resolve3) => setTimeout(resolve3, pollInterval));
       const updatedTask = await extra.taskStore.getTask(taskId);
       if (!updatedTask) {
         throw new McpError(ErrorCode.InternalError, `Task ${taskId} not found during polling`);
@@ -36549,9 +36549,9 @@ var EMPTY_COMPLETION_RESULT = {
 
 // src/tools/advanced.ts
 var import_child_process2 = require("child_process");
-var import_fs5 = require("fs");
+var import_fs6 = require("fs");
 var net = __toESM(require("net"), 1);
-var path4 = __toESM(require("path"), 1);
+var path5 = __toESM(require("path"), 1);
 
 // src/config.ts
 var import_fs = require("fs");
@@ -36727,14 +36727,14 @@ var LightCraftSession = class _LightCraftSession {
     }
   }
   rpc(method, params, timeoutSec = COMMAND_TIMEOUT_SEC) {
-    const run = () => new Promise((resolve2, reject) => {
+    const run = () => new Promise((resolve3, reject) => {
       if (this.closed) return reject(new Error("LightCraft engine is closed."));
       const id = this.nextId++;
       const timer = setTimeout(() => {
         this.pending.delete(id);
         reject(new Error(`LightCraft engine timed out after ${timeoutSec} s (${method}).`));
       }, timeoutSec * 1e3);
-      this.pending.set(id, { resolve: resolve2, reject, timer });
+      this.pending.set(id, { resolve: resolve3, reject, timer });
       this.send({ jsonrpc: "2.0", id, method, params });
     });
     const next = this.queue.then(run, run);
@@ -36816,7 +36816,7 @@ async function withSession(fn, connect2) {
 }
 function runCli(args, timeoutSec = 120) {
   const cli = requireCli();
-  return new Promise((resolve2, reject) => {
+  return new Promise((resolve3, reject) => {
     const cwd = (0, import_fs2.mkdtempSync)(path2.join(os2.tmpdir(), "lcmcp-"));
     (0, import_child_process.execFile)(
       cli,
@@ -36828,15 +36828,15 @@ function runCli(args, timeoutSec = 120) {
         } catch {
         }
         if (err) reject(new Error(`lightcraft-cli ${args[0]}: ${(stderr || stdout || err.message).toString().trim()}`));
-        else resolve2(stdout);
+        else resolve3(stdout);
       }
     );
   });
 }
 
 // src/tools/common.ts
-var import_fs4 = require("fs");
-var path3 = __toESM(require("path"), 1);
+var import_fs5 = require("fs");
+var path4 = __toESM(require("path"), 1);
 
 // src/paths.ts
 var import_fs3 = require("fs");
@@ -36878,9 +36878,51 @@ function stemOf(p, platform = currentPlatform()) {
   return pathFor(platform).basename(p).replace(/\.[^.]+$/, "");
 }
 
+// src/links.ts
+var import_fs4 = require("fs");
+var path3 = __toESM(require("path"), 1);
+var import_url = require("url");
+var SKIP = /^(input|inputs|input_path|input_paths|input_dir|source|sources|template|template_path|csv_path|open_path|script_path|install_dir|cli|app|connector_dir|work_dir)$/i;
+var MAX = 60;
+function fileUrl(p) {
+  return (0, import_url.pathToFileURL)(p).href.replace(/\(/g, "%28").replace(/\)/g, "%29");
+}
+function outputFiles(obj) {
+  const found = /* @__PURE__ */ new Set();
+  const walk = (v, key) => {
+    if (found.size >= MAX || key !== void 0 && SKIP.test(key)) return;
+    if (typeof v === "string") {
+      if (v.length < 1024 && path3.isAbsolute(v) && !/^[\\/]+$/.test(v) && (0, import_fs4.existsSync)(v)) found.add(path3.resolve(v));
+    } else if (Array.isArray(v)) {
+      for (const x of v) walk(x, key);
+    } else if (v && typeof v === "object") {
+      for (const [k, x] of Object.entries(v)) walk(x, k);
+    }
+  };
+  walk(obj);
+  return [...found];
+}
+function filesMarkdown(files) {
+  return files.map((f) => {
+    let dir = false;
+    try {
+      dir = (0, import_fs4.statSync)(f).isDirectory();
+    } catch {
+    }
+    const label = (path3.basename(f) || f).replace(/([[\]\\])/g, "\\$1") + (dir ? "/" : "");
+    return `- [${label}](${fileUrl(f)})`;
+  }).join("\n");
+}
+function withFileLinks(obj) {
+  if (!obj || typeof obj !== "object" || Array.isArray(obj)) return obj;
+  const files = outputFiles(obj);
+  return files.length ? { ...obj, files_markdown: filesMarkdown(files) } : obj;
+}
+var LINK_INSTRUCTIONS = "When a result lists output files it includes files_markdown: ready-made links (file:/// URLs) to every file and folder written. Show them to the user exactly as given (one per line, or inside a table cell) so each output can be opened from the chat; never retype the paths.";
+
 // src/tools/common.ts
 function json2(obj, isError = false) {
-  const out = { content: [{ type: "text", text: JSON.stringify(obj, null, 2) }] };
+  const out = { content: [{ type: "text", text: JSON.stringify(withFileLinks(obj), null, 2) }] };
   if (isError) out.isError = true;
   return out;
 }
@@ -36942,16 +36984,16 @@ var outputSchema = {
 function collectInputs(paths, dir, exts = READABLE) {
   const out = [];
   for (const p of paths) {
-    if (!path3.isAbsolute(p)) throw new Error(`Paths must be absolute: ${p}`);
-    if (!(0, import_fs4.existsSync)(p) || !(0, import_fs4.statSync)(p).isFile()) throw new Error(`File not found: ${p}`);
+    if (!path4.isAbsolute(p)) throw new Error(`Paths must be absolute: ${p}`);
+    if (!(0, import_fs5.existsSync)(p) || !(0, import_fs5.statSync)(p).isFile()) throw new Error(`File not found: ${p}`);
     out.push(p);
   }
   if (dir) {
-    if (!path3.isAbsolute(dir)) throw new Error(`input_dir must be an absolute path: ${dir}`);
-    if (!(0, import_fs4.existsSync)(dir) || !(0, import_fs4.statSync)(dir).isDirectory()) throw new Error(`Folder not found: ${dir}`);
-    for (const name of (0, import_fs4.readdirSync)(dir).sort((a, b) => a.localeCompare(b, void 0, { numeric: true }))) {
-      const full = path3.join(dir, name);
-      if (exts.includes(path3.extname(name).slice(1).toLowerCase()) && (0, import_fs4.statSync)(full).isFile()) out.push(full);
+    if (!path4.isAbsolute(dir)) throw new Error(`input_dir must be an absolute path: ${dir}`);
+    if (!(0, import_fs5.existsSync)(dir) || !(0, import_fs5.statSync)(dir).isDirectory()) throw new Error(`Folder not found: ${dir}`);
+    for (const name of (0, import_fs5.readdirSync)(dir).sort((a, b) => a.localeCompare(b, void 0, { numeric: true }))) {
+      const full = path4.join(dir, name);
+      if (exts.includes(path4.extname(name).slice(1).toLowerCase()) && (0, import_fs5.statSync)(full).isFile()) out.push(full);
     }
   }
   if (out.length === 0) throw new Error("No input files: give input_path, input_paths or input_dir.");
@@ -36961,20 +37003,20 @@ function inputsOf(a, exts = READABLE) {
   return collectInputs([...a.input_path ? [a.input_path] : [], ...a.input_paths ?? []], a.input_dir, exts);
 }
 function outputFor(input2, ext, suffix, o) {
-  if (o.output_dir) (0, import_fs4.mkdirSync)(o.output_dir, { recursive: true });
+  if (o.output_dir) (0, import_fs5.mkdirSync)(o.output_dir, { recursive: true });
   const r = resolveOutputPath({ inputPath: input2, ext, suffix, outputPath: o.output_path, outputDir: o.output_dir, overwrite: o.overwrite });
   if ("error" in r) throw new Error(r.error);
-  (0, import_fs4.mkdirSync)(path3.dirname(r.path), { recursive: true });
+  (0, import_fs5.mkdirSync)(path4.dirname(r.path), { recursive: true });
   return r.path;
 }
 function formatOfPath(p) {
-  const e = path3.extname(p).slice(1).toLowerCase();
+  const e = path4.extname(p).slice(1).toLowerCase();
   const map2 = { jpeg: "jpg", jpe: "jpg", tif: "tiff" };
   const f = map2[e] ?? e;
   return f in WRITABLE && f !== "original" ? f : void 0;
 }
 function isRaw(p) {
-  return RAW.includes(path3.extname(p).slice(1).toLowerCase());
+  return RAW.includes(path4.extname(p).slice(1).toLowerCase());
 }
 function engineExportOptions(o) {
   const p = {};
@@ -37006,10 +37048,10 @@ async function exportAll(s, id, base, formats, o) {
   if (base.output_path && !named) throw new Error(`output_path has an extension LightCraft can't write: ${base.output_path}`);
   const opts = engineExportOptions(o);
   for (const f of formats) {
-    if (f === "dng" && !isRaw(base.input)) throw new Error(`DNG export needs a raw photo; ${path3.basename(base.input)} is not one.`);
-    const ext = f === "original" ? path3.extname(base.input).slice(1) : WRITABLE[f];
-    const target = named === f ? outputFor(base.output_path + ".__src", ext, "", { output_path: base.output_path, overwrite: base.overwrite }) : outputFor(base.output_path ? path3.join(path3.dirname(base.output_path), stemOf(base.output_path) + ".__src") : base.input, ext, base.output_path ? "" : base.suffix, {
-      output_dir: base.output_dir ?? (base.output_path ? path3.dirname(base.output_path) : void 0),
+    if (f === "dng" && !isRaw(base.input)) throw new Error(`DNG export needs a raw photo; ${path4.basename(base.input)} is not one.`);
+    const ext = f === "original" ? path4.extname(base.input).slice(1) : WRITABLE[f];
+    const target = named === f ? outputFor(base.output_path + ".__src", ext, "", { output_path: base.output_path, overwrite: base.overwrite }) : outputFor(base.output_path ? path4.join(path4.dirname(base.output_path), stemOf(base.output_path) + ".__src") : base.input, ext, base.output_path ? "" : base.suffix, {
+      output_dir: base.output_dir ?? (base.output_path ? path4.dirname(base.output_path) : void 0),
       overwrite: base.overwrite
     });
     const r = await s.json("export", { id, path: target, format: ENGINE_FORMAT[f], ...f === "dng" || f === "original" ? {} : opts });
@@ -37041,11 +37083,11 @@ async function engineControls() {
   return controlCache;
 }
 function controlPortOpen(port = CONTROL_PORT, timeoutMs = 800) {
-  return new Promise((resolve2) => {
+  return new Promise((resolve3) => {
     const sock = net.connect({ host: "127.0.0.1", port });
     const done = (ok) => {
       sock.destroy();
-      resolve2(ok);
+      resolve3(ok);
     };
     sock.setTimeout(timeoutMs, () => done(false));
     sock.once("connect", () => done(true));
@@ -37053,11 +37095,11 @@ function controlPortOpen(port = CONTROL_PORT, timeoutMs = 800) {
   });
 }
 function appRunning() {
-  return new Promise((resolve2) => {
+  return new Promise((resolve3) => {
     if (process.platform === "win32") {
-      (0, import_child_process2.execFile)("tasklist", ["/FI", "IMAGENAME eq lightcraft.exe", "/NH"], { windowsHide: true }, (err, out) => resolve2(!err && /lightcraft\.exe/i.test(out)));
+      (0, import_child_process2.execFile)("tasklist", ["/FI", "IMAGENAME eq lightcraft.exe", "/NH"], { windowsHide: true }, (err, out) => resolve3(!err && /lightcraft\.exe/i.test(out)));
     } else {
-      (0, import_child_process2.execFile)("pgrep", ["-xi", "lightcraft"], (err, out) => resolve2(!err && out.trim().length > 0));
+      (0, import_child_process2.execFile)("pgrep", ["-xi", "lightcraft"], (err, out) => resolve3(!err && out.trim().length > 0));
     }
   });
 }
@@ -37198,12 +37240,12 @@ function registerAdvancedTools(server) {
     },
     async (args) => {
       try {
-        for (const p of args.paths) if (!path4.isAbsolute(p)) throw new Error(`Paths must be absolute: ${p}`);
+        for (const p of args.paths) if (!path5.isAbsolute(p)) throw new Error(`Paths must be absolute: ${p}`);
         const install = resolveInstall();
         if (!install.app) throw new Error("LightCraft desktop app not found. Set LIGHTCRAFT_DIR (or LIGHTCRAFT_APP for an AppImage).");
         const extra = args.control && !await controlPortOpen() ? ["--control", String(CONTROL_PORT)] : [];
         const cwd = connectorDir();
-        (0, import_fs5.mkdirSync)(cwd, { recursive: true });
+        (0, import_fs6.mkdirSync)(cwd, { recursive: true });
         const child = (0, import_child_process2.spawn)(install.app, [...extra, ...args.paths], { cwd, detached: true, stdio: "ignore", windowsHide: false });
         child.on("error", () => void 0);
         child.unref();
@@ -37256,8 +37298,8 @@ function registerAdvancedTools(server) {
 }
 
 // src/tools/develop.ts
-var import_fs6 = require("fs");
-var path5 = __toESM(require("path"), 1);
+var import_fs7 = require("fs");
+var path6 = __toESM(require("path"), 1);
 var point = external_exports.array(external_exports.number().min(0).max(1)).length(2).describe("[x, y], normalized 0..1 from the top-left.");
 var maskAdjustSchema = external_exports.object({
   exposure: external_exports.number().optional(),
@@ -37356,7 +37398,7 @@ async function applyEdits(s, id, e) {
         const before = new Set((await s.cmd("presets.list") ?? []).map((p) => p.id));
         const r = await s.cmd("preset.import", { paths: [file2] });
         pid = (await s.cmd("presets.list") ?? []).map((p) => p.id).find((x) => !before.has(x));
-        if (!pid) throw new Error(`no new preset found in ${path5.basename(file2)} (${JSON.stringify(r).slice(0, 200)})`);
+        if (!pid) throw new Error(`no new preset found in ${path6.basename(file2)} (${JSON.stringify(r).slice(0, 200)})`);
         known.set(file2, pid);
       }
       await s.cmd("preset.apply", { id: pid, ids: [id], ...e.preset_amount !== void 0 ? { amount: e.preset_amount } : {} });
@@ -37531,7 +37573,7 @@ function registerDevelopTools(server) {
           let saved;
           if (args.save || args.output_path) {
             saved = outputFor(file2, "jpg", "_preview", { output_path: args.output_path, overwrite: args.overwrite });
-            (0, import_fs6.writeFileSync)(saved, Buffer.from(img.data, "base64"));
+            (0, import_fs7.writeFileSync)(saved, Buffer.from(img.data, "base64"));
           }
           return withPreview({ success: true, input: file2, ...applied.length ? { applied } : {}, ...saved ? { output: saved } : {} }, img);
         });
@@ -37559,7 +37601,7 @@ function registerDevelopTools(server) {
             const [id] = await s.importFiles([file2]);
             const p = await s.cmd("photo.inspect", { id });
             const { develop, ...rest } = p ?? {};
-            const out = { success: true, path: file2, bytes: (0, import_fs6.statSync)(file2).size, raw: isRaw(file2), ...rest };
+            const out = { success: true, path: file2, bytes: (0, import_fs7.statSync)(file2).size, raw: isRaw(file2), ...rest };
             if (args.all_metadata) out["metadata"] = await s.cmd("photo.allMetadata", { id });
             return out;
           })
@@ -37615,25 +37657,25 @@ function registerDevelopTools(server) {
           const mergedPath = r?.path;
           if (typeof mergedId !== "number" || !mergedPath) throw new Error(`The merge returned no photo: ${JSON.stringify(r).slice(0, 300)}`);
           const tag = { hdr: "HDR", panorama: "Pano", hdr_panorama: "HDR-Pano" }[args.mode];
-          const stem = args.name ?? `${path5.basename(inputs[0]).replace(/\.[^.]+$/, "")}-${tag}`;
-          const base = path5.join(args.output_dir ?? path5.dirname(inputs[0]), `${stem}.dng`);
+          const stem = args.name ?? `${path6.basename(inputs[0]).replace(/\.[^.]+$/, "")}-${tag}`;
+          const base = path6.join(args.output_dir ?? path6.dirname(inputs[0]), `${stem}.dng`);
           const applied = hasEdits(editsOf(args)) ? await applyEdits(s, mergedId, editsOf(args)) : [];
           const outputs = [];
           const formats = args.formats;
           const rest = formats.filter((f) => f !== "dng");
           if (rest.length) {
-            const named = args.output_path && path5.extname(args.output_path).toLowerCase() !== ".dng" ? args.output_path : void 0;
-            outputs.push(...await exportAll(s, mergedId, { input: base, suffix: "", output_dir: path5.dirname(base), output_path: named, overwrite: args.overwrite }, rest, args));
+            const named = args.output_path && path6.extname(args.output_path).toLowerCase() !== ".dng" ? args.output_path : void 0;
+            outputs.push(...await exportAll(s, mergedId, { input: base, suffix: "", output_dir: path6.dirname(base), output_path: named, overwrite: args.overwrite }, rest, args));
           }
           if (formats.includes("dng")) {
             const target = outputFor(base + ".__src", "dng", "", {
-              output_path: args.output_path && path5.extname(args.output_path).toLowerCase() === ".dng" ? args.output_path : base,
+              output_path: args.output_path && path6.extname(args.output_path).toLowerCase() === ".dng" ? args.output_path : base,
               overwrite: args.overwrite
             });
             if (applied.length) outputs.push(...await exportAll(s, mergedId, { input: mergedPath, suffix: "", output_path: target, overwrite: true }, ["dng"], args));
             else {
-              (0, import_fs6.copyFileSync)(mergedPath, target);
-              outputs.push({ path: target, format: "dng", bytes: (0, import_fs6.statSync)(target).size, width: r.width, height: r.height });
+              (0, import_fs7.copyFileSync)(mergedPath, target);
+              outputs.push({ path: target, format: "dng", bytes: (0, import_fs7.statSync)(target).size, width: r.width, height: r.height });
             }
           }
           const { id: _i, path: _p, ...details } = r;
@@ -37680,8 +37722,8 @@ function registerDevelopTools(server) {
               const keep = photos.filter((p) => (p.group === null || p.group === void 0 ? !p.blurry : p.best) && p.path);
               copied = [];
               for (const p of keep) {
-                const dst = outputFor(p.path, path5.extname(p.path).slice(1), "", { output_dir: args.copy_best_to, overwrite: args.overwrite });
-                (0, import_fs6.copyFileSync)(p.path, dst);
+                const dst = outputFor(p.path, path6.extname(p.path).slice(1), "", { output_dir: args.copy_best_to, overwrite: args.overwrite });
+                (0, import_fs7.copyFileSync)(p.path, dst);
                 copied.push(dst);
               }
             }
@@ -37698,8 +37740,8 @@ function registerDevelopTools(server) {
 // src/server.ts
 function readPackageVersion() {
   try {
-    const dir = path6.dirname((0, import_url.fileURLToPath)(_importMetaUrl));
-    const pkg = JSON.parse((0, import_fs7.readFileSync)(path6.resolve(dir, "../package.json"), "utf-8"));
+    const dir = path7.dirname((0, import_url2.fileURLToPath)(_importMetaUrl));
+    const pkg = JSON.parse((0, import_fs8.readFileSync)(path7.resolve(dir, "../package.json"), "utf-8"));
     if (typeof pkg.version === "string" && pkg.version) return pkg.version;
   } catch {
   }
@@ -37709,7 +37751,7 @@ function createServer() {
   const server = new McpServer(
     { name: "lightcraft-mcp-server", version: readPackageVersion() },
     {
-      instructions: "Develops photos and raw files with the engine of the locally installed LightCraft (Windows, macOS, Linux), an open-source Lightroom-class raw developer: auto tone, white balance, 114 develop sliders, presets and profiles (Lightroom .xmp presets too), black & white, crop and straighten, spot healing, masks with local adjustments, HDR and panorama merges, culling by sharpness, and export to JPEG, PNG, TIFF, WebP, AVIF and DNG, for one photo or whole folders. Positions (crop rects, mask points, spots) are normalized 0..1 from the top-left. All paths must be absolute; originals are only read; files are never overwritten unless overwrite is true. The engine runs headless with a throwaway library and never touches the LightCraft app or its library unless live=true. list_lightcraft_catalog lists the controls, presets, profiles and 240 commands."
+      instructions: "Develops photos and raw files with the engine of the locally installed LightCraft (Windows, macOS, Linux), an open-source Lightroom-class raw developer: auto tone, white balance, 114 develop sliders, presets and profiles (Lightroom .xmp presets too), black & white, crop and straighten, spot healing, masks with local adjustments, HDR and panorama merges, culling by sharpness, and export to JPEG, PNG, TIFF, WebP, AVIF and DNG, for one photo or whole folders. Positions (crop rects, mask points, spots) are normalized 0..1 from the top-left. All paths must be absolute; originals are only read; files are never overwritten unless overwrite is true. The engine runs headless with a throwaway library and never touches the LightCraft app or its library unless live=true. list_lightcraft_catalog lists the controls, presets, profiles and 240 commands. " + LINK_INSTRUCTIONS
     }
   );
   registerDevelopTools(server);

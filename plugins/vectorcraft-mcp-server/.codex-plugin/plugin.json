@@ -1,6 +1,6 @@
 {
   "name": "vectorcraft-mcp-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vectorize images, convert between SVG, PDF, AI, EPS, DXF, PNG and more, create and recolor vector designs with shapes, text, charts and effects, using the VectorCraft editor installed on Windows, macOS or Linux. Not affiliated with VectorCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",

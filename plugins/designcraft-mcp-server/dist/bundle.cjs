@@ -2986,7 +2986,7 @@ var require_compile = __commonJS({
       const schOrFunc = root.refs[ref];
       if (schOrFunc)
         return schOrFunc;
-      let _sch = resolve2.call(this, root, ref);
+      let _sch = resolve3.call(this, root, ref);
       if (_sch === void 0) {
         const schema = (_a3 = root.localRefs) === null || _a3 === void 0 ? void 0 : _a3[ref];
         const { schemaId } = this.opts;
@@ -3013,7 +3013,7 @@ var require_compile = __commonJS({
     function sameSchemaEnv(s1, s2) {
       return s1.schema === s2.schema && s1.root === s2.root && s1.baseId === s2.baseId;
     }
-    function resolve2(root, ref) {
+    function resolve3(root, ref) {
       let sch;
       while (typeof (sch = this.refs[ref]) == "string")
         ref = sch;
@@ -3264,8 +3264,8 @@ var require_utils = __commonJS({
       }
       return ind;
     }
-    function removeDotSegments(path7) {
-      let input2 = path7;
+    function removeDotSegments(path8) {
+      let input2 = path8;
       const output2 = [];
       let nextSlash = -1;
       let len = 0;
@@ -3674,8 +3674,8 @@ var require_schemes = __commonJS({
       }
       if (wsComponent.resourceName) {
         const queryIndex = wsComponent.resourceName.indexOf("?");
-        const path7 = queryIndex === -1 ? wsComponent.resourceName : wsComponent.resourceName.slice(0, queryIndex);
-        wsComponent.path = path7 && path7 !== "/" ? path7 : void 0;
+        const path8 = queryIndex === -1 ? wsComponent.resourceName : wsComponent.resourceName.slice(0, queryIndex);
+        wsComponent.path = path8 && path8 !== "/" ? path8 : void 0;
         wsComponent.query = queryIndex === -1 ? void 0 : wsComponent.resourceName.slice(queryIndex + 1);
         wsComponent.resourceName = void 0;
       }
@@ -3843,7 +3843,7 @@ var require_fast_uri = __commonJS({
       }
       return uri;
     }
-    function resolve2(baseURI, relativeURI, options) {
+    function resolve3(baseURI, relativeURI, options) {
       const schemelessOptions = options ? Object.assign({ scheme: "null" }, options) : { scheme: "null" };
       const {
         parsed: baseParsed,
@@ -4212,7 +4212,7 @@ var require_fast_uri = __commonJS({
     var fastUri = {
       SCHEMES,
       normalize,
-      resolve: resolve2,
+      resolve: resolve3,
       resolveComponent,
       equal,
       serialize,
@@ -8020,10 +8020,10 @@ function mergeDefs(...defs) {
 function cloneDef(schema) {
   return mergeDefs(schema._zod.def);
 }
-function getElementAtPath(obj, path7) {
-  if (!path7)
+function getElementAtPath(obj, path8) {
+  if (!path8)
     return obj;
-  return path7.reduce((acc, key) => acc?.[key], obj);
+  return path8.reduce((acc, key) => acc?.[key], obj);
 }
 function promiseAllObject(promisesObj) {
   const keys = Object.keys(promisesObj);
@@ -8363,11 +8363,11 @@ function explicitlyAborted(x, startIndex = 0) {
   }
   return false;
 }
-function prefixIssues(path7, issues) {
+function prefixIssues(path8, issues) {
   return issues.map((iss) => {
     var _a3;
     (_a3 = iss).path ?? (_a3.path = []);
-    iss.path.unshift(path7);
+    iss.path.unshift(path8);
     return iss;
   });
 }
@@ -8817,16 +8817,16 @@ function flattenError(error62, mapper = (issue2) => issue2.message) {
 }
 function formatError(error62, mapper = (issue2) => issue2.message) {
   const fieldErrors = { _errors: [] };
-  const processError = (error63, path7 = []) => {
+  const processError = (error63, path8 = []) => {
     for (const issue2 of error63.issues) {
       if (issue2.code === "invalid_union" && issue2.errors.length) {
-        issue2.errors.map((issues) => processError({ issues }, [...path7, ...issue2.path]));
+        issue2.errors.map((issues) => processError({ issues }, [...path8, ...issue2.path]));
       } else if (issue2.code === "invalid_key") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else if (issue2.code === "invalid_element") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else {
-        const fullpath = [...path7, ...issue2.path];
+        const fullpath = [...path8, ...issue2.path];
         if (fullpath.length === 0) {
           fieldErrors._errors.push(mapper(issue2));
         } else {
@@ -8865,17 +8865,17 @@ function formatError(error62, mapper = (issue2) => issue2.message) {
 }
 function treeifyError(error62, mapper = (issue2) => issue2.message) {
   const result = { errors: [] };
-  const processError = (error63, path7 = []) => {
+  const processError = (error63, path8 = []) => {
     var _a3;
     for (const issue2 of error63.issues) {
       if (issue2.code === "invalid_union" && issue2.errors.length) {
-        issue2.errors.map((issues) => processError({ issues }, [...path7, ...issue2.path]));
+        issue2.errors.map((issues) => processError({ issues }, [...path8, ...issue2.path]));
       } else if (issue2.code === "invalid_key") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else if (issue2.code === "invalid_element") {
-        processError({ issues: issue2.issues }, [...path7, ...issue2.path]);
+        processError({ issues: issue2.issues }, [...path8, ...issue2.path]);
       } else {
-        const fullpath = [...path7, ...issue2.path];
+        const fullpath = [...path8, ...issue2.path];
         if (fullpath.length === 0) {
           result.errors.push(mapper(issue2));
           continue;
@@ -8914,8 +8914,8 @@ function treeifyError(error62, mapper = (issue2) => issue2.message) {
 }
 function toDotPath(_path) {
   const segs = [];
-  const path7 = _path.map((seg) => typeof seg === "object" ? seg.key : seg);
-  for (const seg of path7) {
+  const path8 = _path.map((seg) => typeof seg === "object" ? seg.key : seg);
+  for (const seg of path8) {
     if (typeof seg === "number")
       segs.push(`[${seg}]`);
     else if (typeof seg === "symbol")
@@ -12230,7 +12230,7 @@ var recursive = /* @__PURE__ */ new WeakMap();
 var NONE = 0;
 var ASSUMED = 1;
 var PROVEN = 2;
-function isRecursive(inst, stack, resolve2) {
+function isRecursive(inst, stack, resolve3) {
   const cached2 = recursive.get(inst);
   if (cached2 !== void 0)
     return cached2 ? PROVEN : NONE;
@@ -12240,7 +12240,7 @@ function isRecursive(inst, stack, resolve2) {
   let result = NONE;
   const check2 = (child) => {
     if (result !== PROVEN && child?._zod) {
-      const answer = isRecursive(child, stack, resolve2);
+      const answer = isRecursive(child, stack, resolve3);
       if (answer > result)
         result = answer;
     }
@@ -12251,7 +12251,7 @@ function isRecursive(inst, stack, resolve2) {
       const desc = Object.getOwnPropertyDescriptor(sh, key);
       if (spread && !desc.enumerable)
         continue;
-      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve2) : NONE;
+      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve3) : NONE;
       if (child > answer)
         answer = child;
     }
@@ -12315,7 +12315,7 @@ function isRecursive(inst, stack, resolve2) {
       break;
     // `$ZodLazy` caches its inner on the def, so a resolved edge is followed exactly
     case "lazy": {
-      const inner = def._cachedInner ?? (resolve2 ? inst._zod.innerType : void 0);
+      const inner = def._cachedInner ?? (resolve3 ? inst._zod.innerType : void 0);
       merge2(inner ? isRecursive(inner, stack, false) : ASSUMED);
       break;
     }
@@ -26017,13 +26017,13 @@ function resolveRef(ref, ctx) {
   if (!ref.startsWith("#")) {
     throw new Error("External $ref is not supported, only local refs (#/...) are allowed");
   }
-  const path7 = ref.slice(1).split("/").filter(Boolean);
-  if (path7.length === 0) {
+  const path8 = ref.slice(1).split("/").filter(Boolean);
+  if (path8.length === 0) {
     return ctx.rootSchema;
   }
   const defsKey = ctx.version === "draft-2020-12" ? "$defs" : "definitions";
-  if (path7[0] === defsKey) {
-    const key = path7[1] === void 0 ? void 0 : decodeJSONPointerSegment(path7[1]);
+  if (path8[0] === defsKey) {
+    const key = path8[1] === void 0 ? void 0 : decodeJSONPointerSegment(path8[1]);
     if (!key || !ctx.defs[key]) {
       throw new Error(`Reference not found: ${ref}`);
     }
@@ -28496,21 +28496,21 @@ var StdioServerTransport = class {
     this.onclose?.();
   }
   send(message) {
-    return new Promise((resolve2) => {
+    return new Promise((resolve3) => {
       const json3 = serializeMessage(message);
       if (this._stdout.write(json3)) {
-        resolve2();
+        resolve3();
       } else {
-        this._stdout.once("drain", resolve2);
+        this._stdout.once("drain", resolve3);
       }
     });
   }
 };
 
 // src/server.ts
-var import_fs7 = require("fs");
-var path6 = __toESM(require("path"), 1);
-var import_url = require("url");
+var import_fs8 = require("fs");
+var path7 = __toESM(require("path"), 1);
+var import_url2 = require("url");
 
 // node_modules/zod/v3/helpers/util.js
 var util;
@@ -28886,8 +28886,8 @@ function getErrorMap2() {
 
 // node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
-  const { data, path: path7, errorMaps, issueData } = params;
-  const fullPath = [...path7, ...issueData.path || []];
+  const { data, path: path8, errorMaps, issueData } = params;
+  const fullPath = [...path8, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -29002,11 +29002,11 @@ var errorUtil;
 
 // node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
-  constructor(parent, value, path7, key) {
+  constructor(parent, value, path8, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path7;
+    this._path = path8;
     this._key = key;
   }
   get path() {
@@ -32557,11 +32557,11 @@ function normalizeObjectSchema(schema) {
   }
   return void 0;
 }
-function getDotPath(path7) {
-  if (path7.length === 0) {
+function getDotPath(path8) {
+  if (path8.length === 0) {
     return "object root";
   }
-  return path7.reduce((acc, seg, index) => {
+  return path8.reduce((acc, seg, index) => {
     if (index === 0) {
       return String(seg);
     }
@@ -34486,7 +34486,7 @@ var Protocol = class {
           return;
         }
         const pollInterval = task2.pollInterval ?? this._options?.defaultTaskPollInterval ?? 1e3;
-        await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
+        await new Promise((resolve3) => setTimeout(resolve3, pollInterval));
         options?.signal?.throwIfAborted();
       }
     } catch (error62) {
@@ -34503,7 +34503,7 @@ var Protocol = class {
    */
   request(request, resultSchema, options) {
     const { relatedRequestId, resumptionToken, onresumptiontoken, task, relatedTask } = options ?? {};
-    return new Promise((resolve2, reject) => {
+    return new Promise((resolve3, reject) => {
       const earlyReject = (error62) => {
         reject(error62);
       };
@@ -34581,7 +34581,7 @@ var Protocol = class {
           if (!parseResult.success) {
             reject(parseResult.error);
           } else {
-            resolve2(parseResult.data);
+            resolve3(parseResult.data);
           }
         } catch (error62) {
           reject(error62);
@@ -34843,12 +34843,12 @@ var Protocol = class {
       }
     } catch {
     }
-    return new Promise((resolve2, reject) => {
+    return new Promise((resolve3, reject) => {
       if (signal.aborted) {
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
         return;
       }
-      const timeoutId = setTimeout(resolve2, interval);
+      const timeoutId = setTimeout(resolve3, interval);
       signal.addEventListener("abort", () => {
         clearTimeout(timeoutId);
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
@@ -35979,7 +35979,7 @@ var McpServer = class {
     let task = createTaskResult.task;
     const pollInterval = task.pollInterval ?? 5e3;
     while (task.status !== "completed" && task.status !== "failed" && task.status !== "cancelled") {
-      await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
+      await new Promise((resolve3) => setTimeout(resolve3, pollInterval));
       const updatedTask = await extra.taskStore.getTask(taskId);
       if (!updatedTask) {
         throw new McpError(ErrorCode.InternalError, `Task ${taskId} not found during polling`);
@@ -36549,9 +36549,9 @@ var EMPTY_COMPLETION_RESULT = {
 
 // src/tools/advanced.ts
 var import_child_process2 = require("child_process");
-var import_fs5 = require("fs");
+var import_fs6 = require("fs");
 var net = __toESM(require("net"), 1);
-var path4 = __toESM(require("path"), 1);
+var path5 = __toESM(require("path"), 1);
 
 // src/config.ts
 var import_fs = require("fs");
@@ -36726,14 +36726,14 @@ var DesignCraftSession = class _DesignCraftSession {
     }
   }
   rpc(method, params, timeoutSec = COMMAND_TIMEOUT_SEC) {
-    const run = () => new Promise((resolve2, reject) => {
+    const run = () => new Promise((resolve3, reject) => {
       if (this.closed) return reject(new Error("DesignCraft engine is closed."));
       const id = this.nextId++;
       const timer = setTimeout(() => {
         this.pending.delete(id);
         reject(new Error(`DesignCraft engine timed out after ${timeoutSec} s (${method}).`));
       }, timeoutSec * 1e3);
-      this.pending.set(id, { resolve: resolve2, reject, timer });
+      this.pending.set(id, { resolve: resolve3, reject, timer });
       this.send({ jsonrpc: "2.0", id, method, params });
     });
     const next = this.queue.then(run, run);
@@ -36794,7 +36794,7 @@ async function withSession(fn, connect2) {
 }
 function runCli(args, timeoutSec = 120) {
   const cli = requireCli();
-  return new Promise((resolve2, reject) => {
+  return new Promise((resolve3, reject) => {
     const cwd = (0, import_fs2.mkdtempSync)(path2.join(os2.tmpdir(), "dcmcp-"));
     (0, import_child_process.execFile)(
       cli,
@@ -36806,15 +36806,15 @@ function runCli(args, timeoutSec = 120) {
         } catch {
         }
         if (err) reject(new Error(`designcraft-cli ${args[0]}: ${(stderr || stdout || err.message).toString().trim()}`));
-        else resolve2(stdout);
+        else resolve3(stdout);
       }
     );
   });
 }
 
 // src/tools/common.ts
-var import_fs4 = require("fs");
-var path3 = __toESM(require("path"), 1);
+var import_fs5 = require("fs");
+var path4 = __toESM(require("path"), 1);
 
 // src/paths.ts
 var import_fs3 = require("fs");
@@ -36856,9 +36856,51 @@ function stemOf(p, platform = currentPlatform()) {
   return pathFor(platform).basename(p).replace(/\.[^.]+$/, "");
 }
 
+// src/links.ts
+var import_fs4 = require("fs");
+var path3 = __toESM(require("path"), 1);
+var import_url = require("url");
+var SKIP = /^(input|inputs|input_path|input_paths|input_dir|source|sources|template|template_path|csv_path|open_path|script_path|install_dir|cli|app|connector_dir|work_dir)$/i;
+var MAX = 60;
+function fileUrl(p) {
+  return (0, import_url.pathToFileURL)(p).href.replace(/\(/g, "%28").replace(/\)/g, "%29");
+}
+function outputFiles(obj) {
+  const found = /* @__PURE__ */ new Set();
+  const walk = (v, key) => {
+    if (found.size >= MAX || key !== void 0 && SKIP.test(key)) return;
+    if (typeof v === "string") {
+      if (v.length < 1024 && path3.isAbsolute(v) && !/^[\\/]+$/.test(v) && (0, import_fs4.existsSync)(v)) found.add(path3.resolve(v));
+    } else if (Array.isArray(v)) {
+      for (const x of v) walk(x, key);
+    } else if (v && typeof v === "object") {
+      for (const [k, x] of Object.entries(v)) walk(x, k);
+    }
+  };
+  walk(obj);
+  return [...found];
+}
+function filesMarkdown(files) {
+  return files.map((f) => {
+    let dir = false;
+    try {
+      dir = (0, import_fs4.statSync)(f).isDirectory();
+    } catch {
+    }
+    const label = (path3.basename(f) || f).replace(/([[\]\\])/g, "\\$1") + (dir ? "/" : "");
+    return `- [${label}](${fileUrl(f)})`;
+  }).join("\n");
+}
+function withFileLinks(obj) {
+  if (!obj || typeof obj !== "object" || Array.isArray(obj)) return obj;
+  const files = outputFiles(obj);
+  return files.length ? { ...obj, files_markdown: filesMarkdown(files) } : obj;
+}
+var LINK_INSTRUCTIONS = "When a result lists output files it includes files_markdown: ready-made links (file:/// URLs) to every file and folder written. Show them to the user exactly as given (one per line, or inside a table cell) so each output can be opened from the chat; never retype the paths.";
+
 // src/tools/common.ts
 function json2(obj, isError = false) {
-  const out = { content: [{ type: "text", text: JSON.stringify(obj, null, 2) }] };
+  const out = { content: [{ type: "text", text: JSON.stringify(withFileLinks(obj), null, 2) }] };
   if (isError) out.isError = true;
   return out;
 }
@@ -36909,31 +36951,31 @@ function toPt(v, units) {
 function collectInputs(paths, dir, exts = DOCUMENTS) {
   const out = [];
   for (const p of paths) {
-    if (!path3.isAbsolute(p)) throw new Error(`Paths must be absolute: ${p}`);
-    if (!(0, import_fs4.existsSync)(p) || !(0, import_fs4.statSync)(p).isFile()) throw new Error(`File not found: ${p}`);
+    if (!path4.isAbsolute(p)) throw new Error(`Paths must be absolute: ${p}`);
+    if (!(0, import_fs5.existsSync)(p) || !(0, import_fs5.statSync)(p).isFile()) throw new Error(`File not found: ${p}`);
     out.push(p);
   }
   if (dir) {
-    if (!path3.isAbsolute(dir)) throw new Error(`input_dir must be an absolute path: ${dir}`);
-    if (!(0, import_fs4.existsSync)(dir) || !(0, import_fs4.statSync)(dir).isDirectory()) throw new Error(`Folder not found: ${dir}`);
-    for (const name of (0, import_fs4.readdirSync)(dir).sort((a, b) => a.localeCompare(b, void 0, { numeric: true }))) {
-      const full = path3.join(dir, name);
-      if (exts.includes(path3.extname(name).slice(1).toLowerCase()) && (0, import_fs4.statSync)(full).isFile()) out.push(full);
+    if (!path4.isAbsolute(dir)) throw new Error(`input_dir must be an absolute path: ${dir}`);
+    if (!(0, import_fs5.existsSync)(dir) || !(0, import_fs5.statSync)(dir).isDirectory()) throw new Error(`Folder not found: ${dir}`);
+    for (const name of (0, import_fs5.readdirSync)(dir).sort((a, b) => a.localeCompare(b, void 0, { numeric: true }))) {
+      const full = path4.join(dir, name);
+      if (exts.includes(path4.extname(name).slice(1).toLowerCase()) && (0, import_fs5.statSync)(full).isFile()) out.push(full);
     }
   }
   if (out.length === 0) throw new Error("No input files.");
   return out;
 }
 function outputFor(input2, ext, suffix, o) {
-  if (o.output_dir) (0, import_fs4.mkdirSync)(o.output_dir, { recursive: true });
+  if (o.output_dir) (0, import_fs5.mkdirSync)(o.output_dir, { recursive: true });
   const r = resolveOutputPath({ inputPath: input2, ext, suffix, outputPath: o.output_path, outputDir: o.output_dir, overwrite: o.overwrite });
   if ("error" in r) throw new Error(r.error);
-  (0, import_fs4.mkdirSync)(path3.dirname(r.path), { recursive: true });
+  (0, import_fs5.mkdirSync)(path4.dirname(r.path), { recursive: true });
   return r.path;
 }
 function freeFolder(dir, name, overwrite) {
-  let candidate = path3.join(dir, name);
-  for (let i = 2; (0, import_fs4.existsSync)(candidate) && !overwrite; i++) candidate = path3.join(dir, `${name}_${i}`);
+  let candidate = path4.join(dir, name);
+  for (let i = 2; (0, import_fs5.existsSync)(candidate) && !overwrite; i++) candidate = path4.join(dir, `${name}_${i}`);
   return candidate;
 }
 function parsePages(spec, count) {
@@ -36978,10 +37020,10 @@ async function exportAll(s, base, formats, o) {
     const ext = OUTPUTS[f];
     const usePath = i === 0 && base.output_path;
     if (usePath && (f === "png" || f === "jpg" || f === "package")) throw new Error(`output_path cannot name ${f} output (one file per page / a folder); use output_dir.`);
-    if (usePath && path3.extname(base.output_path).slice(1).toLowerCase() !== ext) throw new Error(`output_path must end in .${ext} for ${f}.`);
-    const dir = base.output_dir ?? path3.dirname(base.output_path ?? base.stemSource);
+    if (usePath && path4.extname(base.output_path).slice(1).toLowerCase() !== ext) throw new Error(`output_path must end in .${ext} for ${f}.`);
+    const dir = base.output_dir ?? path4.dirname(base.output_path ?? base.stemSource);
     const stem = base.output_path ? stemOf(base.output_path) : (base.name !== void 0 ? nameStem(base.name) : stemOf(base.stemSource)) + base.suffix;
-    const target = (e, suffix = "") => usePath ? outputFor(base.output_path + ".__src", e, "", { output_path: base.output_path, overwrite: base.overwrite }) : outputFor(path3.join(dir, stem + suffix + ".__src"), e, "", { output_dir: dir, overwrite: base.overwrite });
+    const target = (e, suffix = "") => usePath ? outputFor(base.output_path + ".__src", e, "", { output_path: base.output_path, overwrite: base.overwrite }) : outputFor(path4.join(dir, stem + suffix + ".__src"), e, "", { output_dir: dir, overwrite: base.overwrite });
     switch (f) {
       case "pdf": {
         const p = target("pdf");
@@ -37019,7 +37061,7 @@ async function exportAll(s, base, formats, o) {
       case "designcraft": {
         const p = target("designcraft");
         await s.cmd("file.saveACopy", { path: p });
-        out.push({ path: p, format: f, bytes: (0, import_fs4.statSync)(p).size });
+        out.push({ path: p, format: f, bytes: (0, import_fs5.statSync)(p).size });
         break;
       }
       case "epub":
@@ -37075,11 +37117,11 @@ async function engineCommands(s) {
   return commandCache;
 }
 function controlPortOpen(port = CONTROL_PORT, timeoutMs = 800) {
-  return new Promise((resolve2) => {
+  return new Promise((resolve3) => {
     const sock = net.connect({ host: "127.0.0.1", port });
     const done = (ok) => {
       sock.destroy();
-      resolve2(ok);
+      resolve3(ok);
     };
     sock.setTimeout(timeoutMs, () => done(false));
     sock.once("connect", () => done(true));
@@ -37087,11 +37129,11 @@ function controlPortOpen(port = CONTROL_PORT, timeoutMs = 800) {
   });
 }
 function appRunning() {
-  return new Promise((resolve2) => {
+  return new Promise((resolve3) => {
     if (process.platform === "win32") {
-      (0, import_child_process2.execFile)("tasklist", ["/FI", "IMAGENAME eq designcraft.exe", "/NH"], { windowsHide: true }, (err, out) => resolve2(!err && /designcraft\.exe/i.test(out)));
+      (0, import_child_process2.execFile)("tasklist", ["/FI", "IMAGENAME eq designcraft.exe", "/NH"], { windowsHide: true }, (err, out) => resolve3(!err && /designcraft\.exe/i.test(out)));
     } else {
-      (0, import_child_process2.execFile)("pgrep", ["-xi", "designcraft"], (err, out) => resolve2(!err && out.trim().length > 0));
+      (0, import_child_process2.execFile)("pgrep", ["-xi", "designcraft"], (err, out) => resolve3(!err && out.trim().length > 0));
     }
   });
 }
@@ -37197,8 +37239,8 @@ function registerAdvancedTools(server) {
     async (args) => {
       try {
         if (args.live && !await controlPortOpen()) throw new Error(`DesignCraft is not listening on port ${CONTROL_PORT}: call open_in_designcraft with control=true first.`);
-        const dir = args.output_path ? path4.dirname(args.output_path) : args.output_dir;
-        if (args.formats?.length && (!dir || !path4.isAbsolute(dir))) throw new Error("Exporting needs an absolute output_dir or output_path.");
+        const dir = args.output_path ? path5.dirname(args.output_path) : args.output_dir;
+        if (args.formats?.length && (!dir || !path5.isAbsolute(dir))) throw new Error("Exporting needs an absolute output_dir or output_path.");
         return await withSession(
           async (s) => {
             if (args.open_path) {
@@ -37222,7 +37264,7 @@ function registerAdvancedTools(server) {
               }
             }
             let outputs;
-            if (args.formats?.length && !failed) outputs = await exportAll(s, { stemSource: path4.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
+            if (args.formats?.length && !failed) outputs = await exportAll(s, { stemSource: path5.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
             const img = args.preview_page ? await preview(s, args.preview_page - 1, await previewScale(s, 900)).catch(() => void 0) : void 0;
             return withPreview({ success: !failed, completed: results.length - failed, failed_steps: failed, results, ...outputs ? { outputs } : {} }, [img], !!failed);
           },
@@ -37251,7 +37293,7 @@ function registerAdvancedTools(server) {
         if (!install.app) throw new Error("DesignCraft desktop app not found. Set DESIGNCRAFT_DIR (or DESIGNCRAFT_APP).");
         const extra = args.control && !await controlPortOpen() ? ["--control", String(CONTROL_PORT)] : [];
         const cwd = connectorDir();
-        (0, import_fs5.mkdirSync)(cwd, { recursive: true });
+        (0, import_fs6.mkdirSync)(cwd, { recursive: true });
         const child = (0, import_child_process2.spawn)(install.app, [...extra, ...files], { cwd, detached: true, stdio: "ignore", windowsHide: false });
         child.on("error", () => void 0);
         child.unref();
@@ -37296,8 +37338,8 @@ function registerAdvancedTools(server) {
 }
 
 // src/tools/layout.ts
-var import_fs6 = require("fs");
-var path5 = __toESM(require("path"), 1);
+var import_fs7 = require("fs");
+var path6 = __toESM(require("path"), 1);
 var textAttrs = {
   font: external_exports.string().optional().describe("Font family: any installed font, or the bundled Inter, Source Sans 3, Source Serif 4 (available on every system)."),
   font_style: external_exports.string().optional().describe("Regular, Bold, Italic, Bold Italic..."),
@@ -37578,14 +37620,14 @@ function registerLayoutTools(server) {
     },
     async (args) => {
       try {
-        const dir = args.output_path ? path5.dirname(args.output_path) : args.output_dir;
-        if (!dir || !path5.isAbsolute(dir)) throw new Error("Give an absolute output_dir or output_path.");
+        const dir = args.output_path ? path6.dirname(args.output_path) : args.output_dir;
+        if (!dir || !path6.isAbsolute(dir)) throw new Error("Give an absolute output_dir or output_path.");
         return await withSession(async (s) => {
           const ctx = { units: args.units, swatches: /* @__PURE__ */ new Map(), pages: [], imageFields: [] };
           await newDocument(s, args, ctx);
           const items = await addItems(s, args.items, ctx);
           const info = await checks(s);
-          const outputs = await exportAll(s, { stemSource: path5.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
+          const outputs = await exportAll(s, { stemSource: path6.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
           return withPreview({ success: true, ...info, items, outputs }, await previews(s, args.preview_pages, Number(info["pages"] ?? 1)));
         });
       } catch (e) {
@@ -37620,8 +37662,8 @@ function registerLayoutTools(server) {
     async (args) => {
       try {
         if (!args.csv_path && !args.rows?.length) throw new Error("Give csv_path or rows.");
-        const dir = args.output_path ? path5.dirname(args.output_path) : args.output_dir ?? (args.template_path ? path5.dirname(args.template_path) : void 0);
-        if (!dir || !path5.isAbsolute(dir)) throw new Error("Give an absolute output_dir or output_path.");
+        const dir = args.output_path ? path6.dirname(args.output_path) : args.output_dir ?? (args.template_path ? path6.dirname(args.template_path) : void 0);
+        if (!dir || !path6.isAbsolute(dir)) throw new Error("Give an absolute output_dir or output_path.");
         const csv = args.csv_path ? collectInputs([args.csv_path], void 0, ["csv", "tsv", "txt"])[0] : void 0;
         return await withSession(async (s) => {
           const ctx = { units: args.units, swatches: /* @__PURE__ */ new Map(), pages: [], imageFields: [] };
@@ -37637,7 +37679,7 @@ function registerLayoutTools(server) {
           if (args.items.length) await addItems(s, args.items, ctx);
           const source = csv ? { path: csv } : { csv: toCsv(args.rows) };
           const fields = await s.cmd("data.fields", source);
-          await s.cmd("data.source.select", csv ? { path: csv, name: path5.basename(csv) } : { base64: Buffer.from(toCsv(args.rows)).toString("base64"), name: "rows.csv" }).catch(() => void 0);
+          await s.cmd("data.source.select", csv ? { path: csv, name: path6.basename(csv) } : { base64: Buffer.from(toCsv(args.rows)).toString("base64"), name: "rows.csv" }).catch(() => void 0);
           for (const f of ctx.imageFields) await s.cmd("data.placeholder.add", { field: f.field, role: "image", item: f.item });
           const r = await s.cmd("data.merge", {
             ...source,
@@ -37646,7 +37688,7 @@ function registerLayoutTools(server) {
             ...args.records ? { range: args.records } : {}
           });
           const info = await checks(s);
-          const outputs = await exportAll(s, { stemSource: path5.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
+          const outputs = await exportAll(s, { stemSource: path6.join(dir, args.name), name: args.name, suffix: "", output_dir: dir, output_path: args.output_path, overwrite: args.overwrite }, args.formats, args);
           return withPreview(
             { success: true, fields: (fields ?? []).map((f) => f.name), records: r?.records, pages: r?.pages, ...r?.missingImages?.length ? { missing_images: r.missingImages } : {}, ...r?.oversetStories ? { overset_stories: r.oversetStories } : {}, ...r?.warnings?.length ? { warnings: r.warnings } : {}, ...info, outputs },
             await previews(s, args.preview_pages, Number(info["pages"] ?? 1))
@@ -37782,7 +37824,7 @@ function registerLayoutTools(server) {
             return {
               success: true,
               path: file2,
-              bytes: (0, import_fs6.statSync)(file2).size,
+              bytes: (0, import_fs7.statSync)(file2).size,
               title: d?.title,
               page_count: d?.pageCount,
               settings: d?.settings,
@@ -37840,8 +37882,8 @@ function registerLayoutTools(server) {
             const img = await preview(s, p - 1, scale);
             imgs.push(img);
             if (img && args.save_dir) {
-              const out = outputFor(path5.join(args.save_dir, path5.basename(file2)), "png", `_p${p}`, { output_dir: args.save_dir, overwrite: args.overwrite });
-              (0, import_fs6.writeFileSync)(out, Buffer.from(img.data, "base64"));
+              const out = outputFor(path6.join(args.save_dir, path6.basename(file2)), "png", `_p${p}`, { output_dir: args.save_dir, overwrite: args.overwrite });
+              (0, import_fs7.writeFileSync)(out, Buffer.from(img.data, "base64"));
               saved.push(out);
             }
           }
@@ -37862,8 +37904,8 @@ function toCsv(rows) {
 // src/server.ts
 function readPackageVersion() {
   try {
-    const dir = path6.dirname((0, import_url.fileURLToPath)(_importMetaUrl));
-    const pkg = JSON.parse((0, import_fs7.readFileSync)(path6.resolve(dir, "../package.json"), "utf-8"));
+    const dir = path7.dirname((0, import_url2.fileURLToPath)(_importMetaUrl));
+    const pkg = JSON.parse((0, import_fs8.readFileSync)(path7.resolve(dir, "../package.json"), "utf-8"));
     if (typeof pkg.version === "string" && pkg.version) return pkg.version;
   } catch {
   }
@@ -37873,7 +37915,7 @@ function createServer() {
   const server = new McpServer(
     { name: "designcraft-mcp-server", version: readPackageVersion() },
     {
-      instructions: "Lays out pages with the engine of the locally installed DesignCraft (Windows, macOS, Linux), an open-source InDesign-class desktop publishing app: flyers, posters, brochures, menus, business cards, certificates, newsletters, reports and book pages from text frames, images, shapes, lines and tables with paragraph styles; data merge from CSV (letters, labels, badges); find / change, font replacement and image replacement in existing documents; preflight. Opens .designcraft and InDesign .idml files and exports print-ready PDF (PDF/X-4, PDF/A-2b, bleed, crop marks), PNG / JPG pages, IDML, EPUB, HTML, booklets and packages. Sizes are in pt unless units says otherwise; x / y are measured from the top-left of each page. All paths must be absolute; inputs are only read; files are never overwritten unless overwrite is true. The engine runs headless and never touches the DesignCraft app unless live=true."
+      instructions: "Lays out pages with the engine of the locally installed DesignCraft (Windows, macOS, Linux), an open-source InDesign-class desktop publishing app: flyers, posters, brochures, menus, business cards, certificates, newsletters, reports and book pages from text frames, images, shapes, lines and tables with paragraph styles; data merge from CSV (letters, labels, badges); find / change, font replacement and image replacement in existing documents; preflight. Opens .designcraft and InDesign .idml files and exports print-ready PDF (PDF/X-4, PDF/A-2b, bleed, crop marks), PNG / JPG pages, IDML, EPUB, HTML, booklets and packages. Sizes are in pt unless units says otherwise; x / y are measured from the top-left of each page. All paths must be absolute; inputs are only read; files are never overwritten unless overwrite is true. The engine runs headless and never touches the DesignCraft app unless live=true. " + LINK_INSTRUCTIONS
     }
   );
   registerLayoutTools(server);

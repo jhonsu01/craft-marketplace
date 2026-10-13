@@ -113,6 +113,8 @@ Sizes are in **pt** unless `units` says `mm`, `cm`, `in` or `px`; `x` / `y` are 
 
 ### Codex (OpenAI)
 
+**Recommended — the marketplace (gets updates):** *Plugins → Add → Add marketplace*, source `jhonsu01/craft-marketplace`, reference `main`, then install **DesignCraft Bridge** from **Craft Bridges** ([craft-marketplace](https://github.com/jhonsu01/craft-marketplace)). New versions arrive by refreshing the marketplace. Or upload the zip (Codex then keeps it in your account and refuses a newer zip with the same name):
+
 1. Download `designcraft-mcp-server-<version>-codex.zip` from the [latest release](https://github.com/jhonsu01/designcraft-mcp-server/releases/latest).
 2. In Codex: *Plugins → Add → New plugin*, choose the zip and click **Add plugin**.
 3. Codex starts the server with `node`, so Node.js ≥ 20 must be on `PATH`. If DesignCraft is not in a standard location, set `DESIGNCRAFT_DIR` or `DESIGNCRAFT_CLI` as system environment variables (Codex has no settings form for local plugins).
@@ -159,7 +161,7 @@ claude mcp add designcraft -- node "$PWD/dist/bundle.cjs"
 ```bash
 npm run build       # TypeScript + single-file bundle (dist/bundle.cjs)
 npm test            # unit tests (Windows, macOS and Linux path logic)
-npm run test:e2e    # 28 end-to-end checks over real MCP stdio (synthetic images and CSV)
+npm run test:e2e    # 29 end-to-end checks over real MCP stdio (synthetic images and CSV)
 npm run pack:mcpb   # designcraft-mcp-server.mcpb
 npm run pack:codex  # Codex plugin zip
 ```
