@@ -1,0 +1,11 @@
+# DeepSeek Harness: run PhotoCraft Bridge through Harness's MCP client (tools appear as mcp__photocraft__<tool>).
+- insert:
+    - id: photocraft-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: photocraft
+        transport: stdio
+        command: node
+        args:
+          - !!js "process.getBuiltinModule('url').fileURLToPath(new URL('node_modules/photocraft-mcp-server/dist/bundle.cjs', baseUrl))"
+        toolCallTimeoutMs: 3600000

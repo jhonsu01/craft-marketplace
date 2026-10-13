@@ -1,0 +1,11 @@
+# DeepSeek Harness: run DesignCraft Bridge through Harness's MCP client (tools appear as mcp__designcraft__<tool>).
+- insert:
+    - id: designcraft-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: designcraft
+        transport: stdio
+        command: node
+        args:
+          - !!js "process.getBuiltinModule('url').fileURLToPath(new URL('node_modules/designcraft-mcp-server/dist/bundle.cjs', baseUrl))"
+        toolCallTimeoutMs: 3600000

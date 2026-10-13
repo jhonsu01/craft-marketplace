@@ -1,0 +1,11 @@
+# DeepSeek Harness: run LightCraft Bridge through Harness's MCP client (tools appear as mcp__lightcraft__<tool>).
+- insert:
+    - id: lightcraft-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: lightcraft
+        transport: stdio
+        command: node
+        args:
+          - !!js "process.getBuiltinModule('url').fileURLToPath(new URL('node_modules/lightcraft-mcp-server/dist/bundle.cjs', baseUrl))"
+        toolCallTimeoutMs: 3600000

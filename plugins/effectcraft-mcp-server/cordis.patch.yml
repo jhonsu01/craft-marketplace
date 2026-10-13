@@ -1,0 +1,11 @@
+# DeepSeek Harness: run EffectCraft Bridge through Harness's MCP client (tools appear as mcp__effectcraft__<tool>).
+- insert:
+    - id: effectcraft-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: effectcraft
+        transport: stdio
+        command: node
+        args:
+          - !!js "process.getBuiltinModule('url').fileURLToPath(new URL('node_modules/effectcraft-mcp-server/dist/bundle.cjs', baseUrl))"
+        toolCallTimeoutMs: 3600000
