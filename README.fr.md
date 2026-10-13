@@ -68,13 +68,33 @@ Les plugins lancent un serveur Node.js local : Node.js ≥ 20 doit donc être da
 
 Chaque dossier de plugin est aussi un bundle DeepSeek Harness. Dans *Plugins → Add plugin*, saisissez l'adresse d'un plugin, puis cliquez sur **Install** et **Enable now** :
 
-- `github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server`
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
+```
 
 Harness ne met pas encore les plugins à jour tout seul : pour mettre à jour, désinstallez puis réinstallez.
 

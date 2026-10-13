@@ -68,13 +68,33 @@ codex plugin add filmcraft-mcp-server@craft
 
 每个插件文件夹同时也是 DeepSeek Harness 的 bundle。在 *Plugins → Add plugin* 中输入某个插件的地址，点击 **Install** 和 **Enable now**：
 
-- `github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server`
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
+```
 
 Harness 目前不会自动更新插件：要更新，请卸载后重新安装。
 

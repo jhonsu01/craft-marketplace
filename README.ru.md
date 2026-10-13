@@ -68,13 +68,33 @@ codex plugin add filmcraft-mcp-server@craft
 
 Каждая папка плагина — также бандл DeepSeek Harness. В *Plugins → Add plugin* введите адрес плагина и нажмите **Install** и **Enable now**:
 
-- `github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server`
-- `github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server`
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/designcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/effectcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/lightcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/photocraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/vectorcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
+```
 
 Harness пока не обновляет плагины сам: чтобы обновить, удалите и установите заново.
 
