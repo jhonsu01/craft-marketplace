@@ -1,0 +1,11 @@
+# DeepSeek Harness: run DeckCraft Bridge through Harness's MCP client (tools appear as mcp__deckcraft__<tool>).
+- insert:
+    - id: deckcraft-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: deckcraft
+        transport: stdio
+        command: node
+        args:
+          - !!js "process.getBuiltinModule('url').fileURLToPath(new URL('node_modules/deckcraft-mcp-server/dist/bundle.cjs', baseUrl))"
+        toolCallTimeoutMs: 3600000

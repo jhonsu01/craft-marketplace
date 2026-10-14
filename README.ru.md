@@ -22,6 +22,9 @@
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF: объединение, разделение, страницы, OCR, формы, подписи, скрытие, пароли; в Word, HTML, изображения, PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | Видеомонтаж: нарезка, обрезка, эффекты, цветокоррекция, титры, скорость, склейка с переходами; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 | **WordCraft Bridge** (`wordcraft-mcp-server`) | Текстовый процессор: документы с заголовками, списками, таблицами и изображениями, поиск / замена, комментарии, отслеживание изменений, слияние; DOCX, PDF, ODT, RTF, Markdown, LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
+| **SoundCraft Bridge** (`soundcraft-mcp-server`) | Музыка и звук: многодорожечные треки из аудиофайлов и нот синтезатора или ударных, эффекты, шины, сведение с LUFS, стемы, MIDI, обработка аудио; WAV, AIFF, FLAC | [SoundCraft](https://github.com/storytold/soundcraft) + Node.js ≥ 20 |
+| **DeckCraft Bridge** (`deckcraft-mcp-server`) | Презентации: слайды со списками, изображениями, диаграммами, таблицами и заметками, темы, переходы, поиск и замена; PowerPoint pptx, pdf, изображения | [DeckCraft](https://github.com/storytold/deckcraft) + Node.js ≥ 20 |
+| **GridCraft Bridge** (`gridcraft-mcp-server`) | Таблицы: листы с живыми формулами, таблицы, форматы, условное форматирование, диаграммы и сводные таблицы, вычисленные значения; xlsx, csv, json, html, pdf | [GridCraft](https://github.com/storytold/gridcraft) + Node.js ≥ 20 |
 
 ## Установка в Codex
 
@@ -67,6 +70,18 @@ codex plugin add filmcraft-mcp-server@craft
 codex plugin add wordcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add soundcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add deckcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add gridcraft-mcp-server@craft
+```
+
 Плагины запускают локальный сервер Node.js, поэтому Node.js ≥ 20 должен быть в `PATH`. Если приложение установлено не в стандартную папку, задайте его переменную (например, `DESIGNCRAFT_DIR`) как системную переменную окружения.
 
 ## DeepSeek Harness
@@ -105,6 +120,18 @@ github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/soundcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/deckcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/gridcraft-mcp-server
+```
+
 Harness пока не обновляет плагины сам: чтобы обновить, удалите и установите заново.
 
 ## Обновления
@@ -131,6 +158,9 @@ Claude Desktop, SunsamCode и другие программы с поддерж�
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
 - **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
+- **SoundCraft Bridge**: [soundcraft-mcp-server.mcpb](https://github.com/jhonsu01/soundcraft-mcp-server/releases/latest/download/soundcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/soundcraft-mcp-server)
+- **DeckCraft Bridge**: [deckcraft-mcp-server.mcpb](https://github.com/jhonsu01/deckcraft-mcp-server/releases/latest/download/deckcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/deckcraft-mcp-server)
+- **GridCraft Bridge**: [gridcraft-mcp-server.mcpb](https://github.com/jhonsu01/gridcraft-mcp-server/releases/latest/download/gridcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/gridcraft-mcp-server)
 
 ## Лицензия
 

@@ -22,6 +22,9 @@
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF：合并、拆分、页面、OCR、表单、签名、涂黑、密码；转 Word、HTML、图片、PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | 视频剪辑：分割、修剪、特效、调色、标题、变速、带转场拼接；H.264、ProRes、GIF、OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 | **WordCraft Bridge** (`wordcraft-mcp-server`) | 文字处理：由标题、列表、表格和图片组成的文档，查找 / 替换、批注、修订、邮件合并；DOCX、PDF、ODT、RTF、Markdown、LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
+| **SoundCraft Bridge** (`soundcraft-mcp-server`) | 音乐与音频：用音频文件和合成器或鼓的音符制作多轨歌曲，效果、总线，带 LUFS 的混音、分轨、MIDI、音频处理；WAV、AIFF、FLAC | [SoundCraft](https://github.com/storytold/soundcraft) + Node.js ≥ 20 |
+| **DeckCraft Bridge** (`deckcraft-mcp-server`) | 演示文稿：带项目符号、图片、图表、表格和备注的幻灯片，主题、切换、查找替换；PowerPoint pptx、pdf、图片 | [DeckCraft](https://github.com/storytold/deckcraft) + Node.js ≥ 20 |
+| **GridCraft Bridge** (`gridcraft-mcp-server`) | 电子表格：带实时公式的工作表、表格、格式、条件格式、图表和数据透视表，计算结果；xlsx、csv、json、html、pdf | [GridCraft](https://github.com/storytold/gridcraft) + Node.js ≥ 20 |
 
 ## 在 Codex 中安装
 
@@ -67,6 +70,18 @@ codex plugin add filmcraft-mcp-server@craft
 codex plugin add wordcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add soundcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add deckcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add gridcraft-mcp-server@craft
+```
+
 插件会启动本地 Node.js 服务器，因此 `PATH` 中必须有 Node.js ≥ 20。如果某个应用不在标准文件夹中，请把它的变量（例如 `DESIGNCRAFT_DIR`）设为系统环境变量。
 
 ## DeepSeek Harness
@@ -105,6 +120,18 @@ github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/soundcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/deckcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/gridcraft-mcp-server
+```
+
 Harness 目前不会自动更新插件：要更新，请卸载后重新安装。
 
 ## 更新
@@ -131,6 +158,9 @@ Claude Desktop、SunsamCode 及其他支持 `.mcpb` 的软件：从各连接器�
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
 - **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
+- **SoundCraft Bridge**: [soundcraft-mcp-server.mcpb](https://github.com/jhonsu01/soundcraft-mcp-server/releases/latest/download/soundcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/soundcraft-mcp-server)
+- **DeckCraft Bridge**: [deckcraft-mcp-server.mcpb](https://github.com/jhonsu01/deckcraft-mcp-server/releases/latest/download/deckcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/deckcraft-mcp-server)
+- **GridCraft Bridge**: [gridcraft-mcp-server.mcpb](https://github.com/jhonsu01/gridcraft-mcp-server/releases/latest/download/gridcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/gridcraft-mcp-server)
 
 ## 许可证
 

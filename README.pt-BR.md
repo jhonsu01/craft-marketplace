@@ -22,6 +22,9 @@
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF: juntar, dividir, páginas, OCR, formulários, assinaturas, tarjas, senhas; para Word, HTML, imagens, PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | Edição de vídeo: dividir, cortar, efeitos, looks de cor, títulos, velocidade, juntar com transições; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 | **WordCraft Bridge** (`wordcraft-mcp-server`) | Processador de texto: documentos com títulos, listas, tabelas e imagens, localizar / substituir, comentários, controle de alterações, mala direta; DOCX, PDF, ODT, RTF, Markdown, LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
+| **SoundCraft Bridge** (`soundcraft-mcp-server`) | Música e áudio: músicas multipista com arquivos de áudio e notas de sintetizador ou bateria, efeitos, buses, mixagens com LUFS, stems, MIDI, processamento de áudio; WAV, AIFF, FLAC | [SoundCraft](https://github.com/storytold/soundcraft) + Node.js ≥ 20 |
+| **DeckCraft Bridge** (`deckcraft-mcp-server`) | Apresentações: slides com tópicos, imagens, gráficos, tabelas e anotações, temas, transições, localizar e substituir; PowerPoint pptx, pdf, imagens | [DeckCraft](https://github.com/storytold/deckcraft) + Node.js ≥ 20 |
+| **GridCraft Bridge** (`gridcraft-mcp-server`) | Planilhas: abas com fórmulas vivas, tabelas, formatos, formatação condicional, gráficos e tabelas dinâmicas, valores calculados; xlsx, csv, json, html, pdf | [GridCraft](https://github.com/storytold/gridcraft) + Node.js ≥ 20 |
 
 ## Instalar no Codex
 
@@ -67,6 +70,18 @@ codex plugin add filmcraft-mcp-server@craft
 codex plugin add wordcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add soundcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add deckcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add gridcraft-mcp-server@craft
+```
+
 Os plugins iniciam um servidor local Node.js, então o Node.js ≥ 20 precisa estar no `PATH`. Se um app não estiver na pasta padrão, defina a variável dele (ex.: `DESIGNCRAFT_DIR`) como variável de ambiente do sistema.
 
 ## DeepSeek Harness
@@ -105,6 +120,18 @@ github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/soundcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/deckcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/gridcraft-mcp-server
+```
+
 O Harness ainda não atualiza plugins sozinho: para atualizar, desinstale e instale de novo.
 
 ## Atualizações
@@ -131,6 +158,9 @@ Claude Desktop, SunsamCode e outros programas `.mcpb`: baixe o `.mcpb` da versã
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
 - **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
+- **SoundCraft Bridge**: [soundcraft-mcp-server.mcpb](https://github.com/jhonsu01/soundcraft-mcp-server/releases/latest/download/soundcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/soundcraft-mcp-server)
+- **DeckCraft Bridge**: [deckcraft-mcp-server.mcpb](https://github.com/jhonsu01/deckcraft-mcp-server/releases/latest/download/deckcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/deckcraft-mcp-server)
+- **GridCraft Bridge**: [gridcraft-mcp-server.mcpb](https://github.com/jhonsu01/gridcraft-mcp-server/releases/latest/download/gridcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/gridcraft-mcp-server)
 
 ## Licença
 

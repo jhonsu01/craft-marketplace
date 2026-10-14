@@ -1,0 +1,18 @@
+{
+  "name": "soundcraft-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for SoundCraft: multitrack sessions from audio files and synth or drum notes, effects, busses, mixdowns with loudness, stems, MIDI, audio processing and conversion, with SoundCraft's own engine, from Claude (Windows, macOS, Linux).",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "mcp"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

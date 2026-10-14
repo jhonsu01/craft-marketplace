@@ -1,0 +1,50 @@
+{
+  "name": "deckcraft-mcp-server",
+  "version": "1.0.0",
+  "description": "Create, edit and convert presentations with the DeckCraft app installed on Windows, macOS or Linux: slides with bullets, pictures, charts, tables and notes, themes, transitions, PowerPoint pptx, pdf and slide images. Not affiliated with DeckCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/deckcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/deckcraft-mcp-server",
+  "license": "Apache-2.0",
+  "keywords": [
+    "deckcraft",
+    "powerpoint",
+    "pptx",
+    "presentation",
+    "slides",
+    "deck",
+    "charts",
+    "pdf",
+    "themes",
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DeckCraft Bridge",
+    "shortDescription": "Create, edit and convert slide decks with your local DeckCraft",
+    "longDescription": "Make slide decks with the DeckCraft you already have installed on Windows, macOS or Linux (tested with 0.6.1 on Windows 11), the open-source, PowerPoint-class presentation app.\n\n- **Create** presentations from a list of slides: title, subtitle, bullets with levels in one or two columns, pictures (kept in proportion), charts, tables, shapes and text boxes, speaker notes, backgrounds (text turns white on dark ones), transitions and bullet animations; or from a plain outline.\n- **Design** with 8 themes, colour and font schemes, widescreen or 4:3 slides, slide numbers and footers.\n- **Edit** existing PowerPoint files: find and replace (titles, text, table cells), add and delete slides, notes, themes and transitions.\n- **Export** to PowerPoint pptx, pdf (slides, notes pages, handouts), png / jpeg per slide, deckcraft and outlines; every result returns pictures of the slides to check them.\n- **Advanced**: run any of DeckCraft's 226 engine commands and open decks in the DeckCraft app.\n\nThe connector drives DeckCraft's own headless engine (deckcraft-cli). Everything runs locally with no network access; originals are only read and files are never overwritten unless you ask. DeckCraft is an open-source project by Storytold; this connector is not affiliated with or endorsed by them.",
+    "developerName": "Jhon Supelano",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/jhonsu01/deckcraft-mcp-server",
+    "privacyPolicyURL": "https://github.com/jhonsu01/deckcraft-mcp-server#safety",
+    "termsOfServiceURL": "https://github.com/jhonsu01/deckcraft-mcp-server/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Make a 6-slide pitch deck with a chart and a table as PPTX and PDF",
+      "Replace the company name in these presentations and add slide numbers",
+      "Export this deck as notes pages PDF and one PNG per slide"
+    ],
+    "brandColor": "#F26B1D",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "screenshots": []
+  }
+}

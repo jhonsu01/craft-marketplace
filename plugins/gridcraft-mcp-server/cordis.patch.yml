@@ -1,0 +1,11 @@
+# DeepSeek Harness: run GridCraft Bridge through Harness's MCP client (tools appear as mcp__gridcraft__<tool>).
+- insert:
+    - id: gridcraft-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: gridcraft
+        transport: stdio
+        command: node
+        args:
+          - !!js "process.getBuiltinModule('url').fileURLToPath(new URL('node_modules/gridcraft-mcp-server/dist/bundle.cjs', baseUrl))"
+        toolCallTimeoutMs: 3600000

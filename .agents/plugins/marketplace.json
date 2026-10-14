@@ -99,6 +99,42 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "soundcraft-mcp-server",
+      "source": {
+        "source": "local",
+        "path": "./plugins/soundcraft-mcp-server"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "deckcraft-mcp-server",
+      "source": {
+        "source": "local",
+        "path": "./plugins/deckcraft-mcp-server"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "gridcraft-mcp-server",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gridcraft-mcp-server"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

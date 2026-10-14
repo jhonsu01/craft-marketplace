@@ -22,6 +22,9 @@
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF: 병합, 분할, 페이지, OCR, 양식, 서명, 가리기, 암호; Word, HTML, 이미지, PDF/A로 변환 | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | 영상 편집: 분할, 트림, 효과, 색 보정, 타이틀, 속도, 전환 효과로 이어 붙이기; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
 | **WordCraft Bridge** (`wordcraft-mcp-server`) | 워드 프로세서: 제목, 목록, 표, 이미지로 문서 작성, 찾기 / 바꾸기, 메모, 변경 내용 추적, 편지 병합; DOCX, PDF, ODT, RTF, Markdown, LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
+| **SoundCraft Bridge** (`soundcraft-mcp-server`) | 음악과 오디오: 오디오 파일과 신스 또는 드럼 노트로 만드는 멀티트랙 곡, 효과, 버스, LUFS를 잰 믹스다운, 스템, MIDI, 오디오 처리; WAV, AIFF, FLAC | [SoundCraft](https://github.com/storytold/soundcraft) + Node.js ≥ 20 |
+| **DeckCraft Bridge** (`deckcraft-mcp-server`) | 프레젠테이션: 글머리 기호, 그림, 차트, 표, 노트가 있는 슬라이드, 테마, 전환, 찾기 및 바꾸기; PowerPoint pptx, pdf, 이미지 | [DeckCraft](https://github.com/storytold/deckcraft) + Node.js ≥ 20 |
+| **GridCraft Bridge** (`gridcraft-mcp-server`) | 스프레드시트: 살아 있는 수식이 있는 시트, 표, 서식, 조건부 서식, 차트와 피벗 테이블, 계산된 값; xlsx, csv, json, html, pdf | [GridCraft](https://github.com/storytold/gridcraft) + Node.js ≥ 20 |
 
 ## Codex에 설치
 
@@ -67,6 +70,18 @@ codex plugin add filmcraft-mcp-server@craft
 codex plugin add wordcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add soundcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add deckcraft-mcp-server@craft
+```
+
+```bash
+codex plugin add gridcraft-mcp-server@craft
+```
+
 플러그인은 로컬 Node.js 서버를 시작하므로 `PATH`에 Node.js ≥ 20이 있어야 합니다. 앱이 표준 폴더에 없다면 해당 변수(예: `DESIGNCRAFT_DIR`)를 시스템 환경 변수로 설정하세요.
 
 ## DeepSeek Harness
@@ -105,6 +120,18 @@ github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/soundcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/deckcraft-mcp-server
+```
+
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/gridcraft-mcp-server
+```
+
 Harness는 아직 플러그인을 자동 업데이트하지 않습니다. 업데이트하려면 제거 후 다시 설치하세요.
 
 ## 업데이트
@@ -131,6 +158,9 @@ Claude Desktop, SunsamCode 등 `.mcpb`를 지원하는 프로그램: 각 커넥�
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
 - **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
+- **SoundCraft Bridge**: [soundcraft-mcp-server.mcpb](https://github.com/jhonsu01/soundcraft-mcp-server/releases/latest/download/soundcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/soundcraft-mcp-server)
+- **DeckCraft Bridge**: [deckcraft-mcp-server.mcpb](https://github.com/jhonsu01/deckcraft-mcp-server/releases/latest/download/deckcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/deckcraft-mcp-server)
+- **GridCraft Bridge**: [gridcraft-mcp-server.mcpb](https://github.com/jhonsu01/gridcraft-mcp-server/releases/latest/download/gridcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/gridcraft-mcp-server)
 
 ## 라이선스
 

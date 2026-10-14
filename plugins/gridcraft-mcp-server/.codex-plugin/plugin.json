@@ -1,0 +1,50 @@
+{
+  "name": "gridcraft-mcp-server",
+  "version": "1.0.0",
+  "description": "Build, edit, read and convert spreadsheets with the GridCraft app installed on Windows, macOS or Linux: sheets with live formulas, tables, formats, conditional formatting, charts and PivotTables, xlsx, csv, json, html and pdf. Not affiliated with GridCraft or Storytold.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "homepage": "https://github.com/jhonsu01/gridcraft-mcp-server",
+  "repository": "https://github.com/jhonsu01/gridcraft-mcp-server",
+  "license": "Apache-2.0",
+  "keywords": [
+    "gridcraft",
+    "excel",
+    "xlsx",
+    "spreadsheet",
+    "formulas",
+    "csv",
+    "pivot-table",
+    "charts",
+    "data",
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "GridCraft Bridge",
+    "shortDescription": "Build, edit, analyze and convert spreadsheets with your local GridCraft",
+    "longDescription": "Work on spreadsheets with the GridCraft you already have installed on Windows, macOS or Linux (tested with 0.6.1 on Windows 11), the open-source, Excel-class spreadsheet app.\n\n- **Create** workbooks from sheets of values and live formulas (513 Excel functions, dynamic arrays): header styling, tables with filter buttons, totals rows, number formats, fonts, colours, borders, merged cells, conditional formatting, drop-down lists, notes, charts (17 types), PivotTables, frozen panes and print setup.\n- **Edit** existing xlsx, ods or csv files: write values and formulas, find and replace, insert and delete rows and columns, sort, remove duplicates, add, rename or delete sheets.\n- **Read and calculate**: computed values, formulas or display text of any range, and formulas evaluated without changing the file; every result shows the first rows and any formula errors.\n- **Convert** between xlsx, xlsm, xls, xlsb, ods, csv, tsv and json in, and xlsx, csv, tsv, json, html and pdf out.\n- **Advanced**: run any of GridCraft's 339 engine commands and open workbooks in the GridCraft app.\n\nThe connector drives GridCraft's own headless engine (gridcraft-cli). Everything runs locally with no network access; originals are only read and files are never overwritten unless you ask. GridCraft is an open-source project by Storytold; this connector is not affiliated with or endorsed by them.",
+    "developerName": "Jhon Supelano",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/jhonsu01/gridcraft-mcp-server",
+    "privacyPolicyURL": "https://github.com/jhonsu01/gridcraft-mcp-server#safety",
+    "termsOfServiceURL": "https://github.com/jhonsu01/gridcraft-mcp-server/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Build a monthly budget workbook with formulas, a chart and a summary sheet",
+      "Read this xlsx and tell me the total sales by region",
+      "Convert every workbook in this folder to CSV"
+    ],
+    "brandColor": "#21A04F",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "screenshots": []
+  }
+}
