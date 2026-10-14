@@ -1,6 +1,6 @@
 {
   "name": "wordcraft-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write, edit (find/replace, comments, tracked changes), mail-merge, convert and preview documents with the WordCraft word processor installed on Windows, macOS or Linux. Not affiliated with WordCraft or Storytold.",
   "author": {
     "name": "Jhon Supelano",

@@ -37341,6 +37341,10 @@ var BlockWriter = class {
   s;
   fresh = true;
   inList = false;
+  aligned = false;
+  afterNote = false;
+  /** End of the last cell of a table just written (a footnote right after the table goes there). */
+  lastCell;
   warnings = [];
   hasToc = false;
   /** The caret is in a non-empty paragraph of the body: continue on a new one. */
@@ -37350,7 +37354,16 @@ var BlockWriter = class {
   async newBlock(style = "Normal") {
     if (!this.fresh) await this.s.cmd("text.newParagraph");
     this.fresh = false;
+    this.lastCell = void 0;
+    if (this.aligned) {
+      await this.s.cmd("para.reset");
+      this.aligned = false;
+    }
     await this.s.cmd("styles.apply", { style });
+    if (this.afterNote) {
+      await this.s.cmd("format.resetChar");
+      this.afterNote = false;
+    }
     if (this.inList) {
       await this.s.cmd("para.numbering", { off: true }).catch(() => void 0);
       await this.s.cmd("para.bullets", { off: true }).catch(() => void 0);
@@ -37358,7 +37371,9 @@ var BlockWriter = class {
     }
   }
   async align(value) {
-    if (value) await this.s.cmd("para.align", { value });
+    if (!value) return;
+    await this.s.cmd("para.align", { value });
+    this.aligned = true;
   }
   async typeFormatted(text, f) {
     const on = [];
@@ -37397,6 +37412,8 @@ var BlockWriter = class {
         if (block.caption) {
           await this.newBlock("Normal");
           await this.s.cmd("references.caption", { label: "Table", text: block.caption, position: "above" }).catch((e) => this.warnings.push(String(e)));
+          await this.s.cmd("caret.right");
+          this.fresh = true;
         }
         await this.newBlock("Normal");
         const cols = Math.max(...block.rows.map((r) => r.length));
@@ -37412,8 +37429,10 @@ var BlockWriter = class {
             if (!(r === block.rows.length - 1 && c === cols - 1)) await this.s.cmd("text.tab");
           }
         }
+        const cell = await this.s.cmd("document.selection").catch(() => void 0);
         await this.s.cmd("caret.docEnd");
         this.fresh = true;
+        this.lastCell = cell?.focus ?? cell?.anchor;
         break;
       }
       case "image": {
@@ -37440,11 +37459,22 @@ var BlockWriter = class {
         this.fresh = false;
         break;
       case "footnote": {
+        if (this.fresh && this.lastCell && Array.isArray(this.lastCell.path)) {
+          const below = await this.s.cmd("document.selection");
+          await this.s.cmd("caret.set", { pos: this.lastCell });
+          await this.s.cmd("references.footnote", { text: block.text });
+          await this.s.cmd("caret.set", { pos: below?.focus ?? below?.anchor });
+          break;
+        }
         const sel = await this.s.cmd("document.selection").catch(() => void 0);
         const at = sel?.focus ?? sel?.anchor;
         await this.s.cmd("references.footnote", { text: block.text });
-        if (at && Array.isArray(at.path)) await this.s.cmd("caret.set", { pos: { ...at, off: Number(at.off ?? 0) + 1 } });
-        else throw new Error("footnote: could not find the caret position to return to.");
+        if (at && Array.isArray(at.path)) {
+          await this.s.cmd("caret.set", { pos: at });
+          await this.s.cmd("caret.end");
+          this.afterNote = true;
+          this.fresh = false;
+        } else throw new Error("footnote: could not find the caret position to return to.");
         break;
       }
     }
@@ -37782,7 +37812,12 @@ function registerDocumentTools(server) {
                   style: b.style,
                   text: String(b.text ?? "").slice(0, 2e3),
                   // numbering num 0 means "no list" (a list switched off)
-                  ...Number(b.props?.numbering?.num ?? 0) > 0 ? { list: true } : {}
+                  ...Number(b.props?.numbering?.num ?? 0) > 0 ? { list: true } : {},
+                  ...b.props?.align ? { align: b.props.align } : {},
+                  ...(() => {
+                    const notes = (b.objects ?? []).filter((o) => o.type === "noteRef").length;
+                    return notes ? { notes } : {};
+                  })()
                 }
               );
             }
