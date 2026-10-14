@@ -21,6 +21,7 @@
 | **VectorCraft Bridge** (`vectorcraft-mcp-server`) | Dessin vectoriel : vectorisation, créations avec formes, texte et graphiques, recoloration ; SVG, PDF, AI, EPS, DXF, PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF : fusionner, scinder, pages, OCR, formulaires, signatures, caviardage, mots de passe ; vers Word, HTML, images, PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | Montage vidéo : découper, rogner, effets, looks couleur, titres, vitesse, assembler avec transitions ; H.264, ProRes, GIF, OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
+| **WordCraft Bridge** (`wordcraft-mcp-server`) | Traitement de texte : documents avec titres, listes, tableaux et images, rechercher / remplacer, commentaires, suivi des modifications, publipostage ; DOCX, PDF, ODT, RTF, Markdown, LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
 
 ## Installer dans Codex
 
@@ -62,6 +63,10 @@ codex plugin add pdfcraft-mcp-server@craft
 codex plugin add filmcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add wordcraft-mcp-server@craft
+```
+
 Les plugins lancent un serveur Node.js local : Node.js ≥ 20 doit donc être dans le `PATH`. Si une application n'est pas dans son dossier standard, définissez sa variable (par ex. `DESIGNCRAFT_DIR`) comme variable d'environnement système.
 
 ## DeepSeek Harness
@@ -96,6 +101,10 @@ github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
+```
+
 Harness ne met pas encore les plugins à jour tout seul : pour mettre à jour, désinstallez puis réinstallez.
 
 ## Mises à jour
@@ -121,6 +130,7 @@ Claude Desktop, SunsamCode et autres logiciels `.mcpb` : téléchargez le `.mcpb
 - **VectorCraft Bridge**: [vectorcraft-mcp-server.mcpb](https://github.com/jhonsu01/vectorcraft-mcp-server/releases/latest/download/vectorcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/vectorcraft-mcp-server)
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
+- **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
 
 ## Licence
 

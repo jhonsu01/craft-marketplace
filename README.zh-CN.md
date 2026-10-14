@@ -21,6 +21,7 @@
 | **VectorCraft Bridge** (`vectorcraft-mcp-server`) | 矢量图形：图像描摹、用形状、文字和图表设计、重新着色；SVG、PDF、AI、EPS、DXF、PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF：合并、拆分、页面、OCR、表单、签名、涂黑、密码；转 Word、HTML、图片、PDF/A | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | 视频剪辑：分割、修剪、特效、调色、标题、变速、带转场拼接；H.264、ProRes、GIF、OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
+| **WordCraft Bridge** (`wordcraft-mcp-server`) | 文字处理：由标题、列表、表格和图片组成的文档，查找 / 替换、批注、修订、邮件合并；DOCX、PDF、ODT、RTF、Markdown、LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
 
 ## 在 Codex 中安装
 
@@ -62,6 +63,10 @@ codex plugin add pdfcraft-mcp-server@craft
 codex plugin add filmcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add wordcraft-mcp-server@craft
+```
+
 插件会启动本地 Node.js 服务器，因此 `PATH` 中必须有 Node.js ≥ 20。如果某个应用不在标准文件夹中，请把它的变量（例如 `DESIGNCRAFT_DIR`）设为系统环境变量。
 
 ## DeepSeek Harness
@@ -96,6 +101,10 @@ github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
+```
+
 Harness 目前不会自动更新插件：要更新，请卸载后重新安装。
 
 ## 更新
@@ -121,6 +130,7 @@ Claude Desktop、SunsamCode 及其他支持 `.mcpb` 的软件：从各连接器�
 - **VectorCraft Bridge**: [vectorcraft-mcp-server.mcpb](https://github.com/jhonsu01/vectorcraft-mcp-server/releases/latest/download/vectorcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/vectorcraft-mcp-server)
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
+- **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
 
 ## 许可证
 

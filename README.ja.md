@@ -21,6 +21,7 @@
 | **VectorCraft Bridge** (`vectorcraft-mcp-server`) | ベクターアート：画像トレース、図形・テキスト・グラフでのデザイン、再配色。SVG、PDF、AI、EPS、DXF、PNG | [VectorCraft](https://github.com/storytold/vectorcraft) + Node.js ≥ 20 |
 | **PdfCraft Bridge** (`pdfcraft-mcp-server`) | PDF：結合、分割、ページ操作、OCR、フォーム、署名、墨消し、パスワード。Word、HTML、画像、PDF/A へ変換 | [PdfCraft](https://github.com/storytold/pdfcraft) + Node.js ≥ 20 |
 | **FilmCraft Bridge** (`filmcraft-mcp-server`) | 動画編集：分割、トリム、エフェクト、カラールック、タイトル、速度、トランジション付き結合。H.264、ProRes、GIF、OTIO | [FilmCraft](https://github.com/storytold/filmcraft) + Node.js ≥ 20 |
+| **WordCraft Bridge** (`wordcraft-mcp-server`) | ワープロ：見出し・リスト・表・画像からの文書作成、検索 / 置換、コメント、変更履歴、差し込み印刷。DOCX、PDF、ODT、RTF、Markdown、LaTeX | [WordCraft](https://github.com/storytold/wordcraft) + Node.js ≥ 20 |
 
 ## Codex へのインストール
 
@@ -62,6 +63,10 @@ codex plugin add pdfcraft-mcp-server@craft
 codex plugin add filmcraft-mcp-server@craft
 ```
 
+```bash
+codex plugin add wordcraft-mcp-server@craft
+```
+
 プラグインはローカルの Node.js サーバーを起動するため、`PATH` に Node.js ≥ 20 が必要です。アプリが標準のフォルダーにない場合は、その変数（例：`DESIGNCRAFT_DIR`）をシステムの環境変数として設定してください。
 
 ## DeepSeek Harness
@@ -96,6 +101,10 @@ github:jhonsu01/craft-marketplace#path:/plugins/pdfcraft-mcp-server
 github:jhonsu01/craft-marketplace#path:/plugins/filmcraft-mcp-server
 ```
 
+```text
+github:jhonsu01/craft-marketplace#path:/plugins/wordcraft-mcp-server
+```
+
 Harness はまだプラグインを自動更新しません。更新するにはアンインストールして再インストールしてください。
 
 ## 更新
@@ -121,6 +130,7 @@ Claude Desktop、SunsamCode など `.mcpb` に対応したアプリ：各コネ�
 - **VectorCraft Bridge**: [vectorcraft-mcp-server.mcpb](https://github.com/jhonsu01/vectorcraft-mcp-server/releases/latest/download/vectorcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/vectorcraft-mcp-server)
 - **PdfCraft Bridge**: [pdfcraft-mcp-server.mcpb](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest/download/pdfcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/pdfcraft-mcp-server)
 - **FilmCraft Bridge**: [filmcraft-mcp-server.mcpb](https://github.com/jhonsu01/filmcraft-mcp-server/releases/latest/download/filmcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/filmcraft-mcp-server)
+- **WordCraft Bridge**: [wordcraft-mcp-server.mcpb](https://github.com/jhonsu01/wordcraft-mcp-server/releases/latest/download/wordcraft-mcp-server.mcpb) · [repo](https://github.com/jhonsu01/wordcraft-mcp-server)
 
 ## ライセンス
 
